@@ -6,6 +6,17 @@
 // contextual nav item (e.g. storage-near-me.html).
 //
 // `active` should be the original HREF of the current page, e.g. "index.html".
+//
+// ── ACCESSIBILITY CHANGE vs. the original ───────────────────────────────────
+// The mobile hamburger was a <div>, which is not focusable or announced to
+// screen readers and fails tap-target / mobile-usability audits (the Semrush
+// "hard-to-tap buttons" flag). It is now a real <button> with:
+//   • type="button"            — won't submit anything
+//   • aria-label               — names the control for screen readers
+//   • aria-controls="nav"      — associates it with the menu it toggles
+//   • aria-expanded            — reflects open/closed state (updated by JS)
+// The class names (menu-toggle, its three <span> bars, the .active state) are
+// unchanged, so all existing CSS continues to apply with no style edits.
 
 export interface NavLink {
   href: string;
@@ -40,15 +51,22 @@ const allLinks = [...navLinks, ...extraNavLinks];
   <div class="container">
     <div class="header-content">
       <a href="index.html">
-        <img src="pictures/fortknoxlogo.webp" alt="Fort Knox Self Storage — Vernal Utah Storage Units" class="logo" />
+        <img src="pictures/fortknoxlogo.webp" alt="Fort Knox Self Storage — Vernal Utah Storage Units" class="logo" width="290" height="290" />
       </a>
 
-      <!-- Hamburger (mobile only) -->
-      <div class="menu-toggle" id="menuToggle">
+      <!-- Hamburger (mobile only) — real <button> for keyboard + screen-reader access -->
+      <button
+        type="button"
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-controls="nav"
+        aria-expanded="false"
+      >
         <span></span>
         <span></span>
         <span></span>
-      </div>
+      </button>
 
       <nav class="nav" id="nav" aria-label="Main navigation">
         {allLinks.map((link) => (

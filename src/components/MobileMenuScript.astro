@@ -1,37 +1,63 @@
 ---
-// MobileMenuScript.astro — the original site JavaScript, unchanged.
+// MobileMenuScript.astro — the original site JavaScript, hardened.
 // Handles: footer year, mobile hamburger toggle, close-on-link-click,
-// and close-on-outside-click. This is the only JS the original site shipped.
+// and close-on-outside-click. This is the only JS the site ships.
 //
-// `is:inline` keeps it as a plain <script> in the page output (no bundling),
-// matching the original behavior exactly with zero added JS framework cost.
+// Changes vs. the original:
+//   • Null-guards every getElementById so a page missing #year / #nav /
+//     #menuToggle no longer throws and halts the rest of the script.
+//   • Keeps aria-expanded and aria-label in sync with the menu state, so the
+//     now-accessible <button> announces correctly to screen readers.
+//
+// `is:inline` keeps it as a plain <script> (no bundling), matching the
+// original zero-framework footprint.
 ---
 <script is:inline>
-  // Footer year
-  document.getElementById("year").innerHTML = new Date().getFullYear();
+  // Footer year (guarded — not every layout guarantees the element)
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
   // Mobile menu toggle
-  const menuToggle = document.getElementById('menuToggle');
-  const nav = document.getElementById('nav');
+  const menuToggle = document.getElementById("menuToggle");
+  const nav = document.getElementById("nav");
 
-  menuToggle.addEventListener('click', function () {
-    nav.classList.toggle('active');
-    this.classList.toggle('active');
-  });
+  if (menuToggle && nav) {
+    const setOpen = (open) => {
+      nav.classList.toggle("active", open);
+      menuToggle.classList.toggle("active", open);
+      menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      menuToggle.setAttribute(
+        "aria-label",
+        open ? "Close navigation menu" : "Open navigation menu"
+      );
+    };
 
-  // Close menu on link click
-  nav.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('active');
-      menuToggle.classList.remove('active');
+    menuToggle.addEventListener("click", () => {
+      setOpen(!nav.classList.contains("active"));
     });
-  });
 
-  // Close menu when clicking outside
-  document.addEventListener('click', function (e) {
-    if (!nav.contains(e.target) && !menuToggle.contains(e.target) && nav.classList.contains('active')) {
-      nav.classList.remove('active');
-      menuToggle.classList.remove('active');
-    }
-  });
+    // Close menu on link click
+    nav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => setOpen(false));
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (
+        nav.classList.contains("active") &&
+        !nav.contains(e.target) &&
+        !menuToggle.contains(e.target)
+      ) {
+        setOpen(false);
+      }
+    });
+
+    // Close menu on Escape for keyboard users
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && nav.classList.contains("active")) {
+        setOpen(false);
+        menuToggle.focus();
+      }
+    });
+  }
 </script>

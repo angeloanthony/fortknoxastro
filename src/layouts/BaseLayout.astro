@@ -4,8 +4,9 @@
 // What the layout OWNS (identical on every original page):
 //   - <!doctype html>, <html lang="en">
 //   - charset + viewport meta
-//   - the global stylesheet (/styles.css)
-//   - the Google Fonts link (Montserrat + Open Sans)
+//   - the global stylesheet (now pipelined via import, not a raw <link>)
+//   - the web fonts (now self-hosted via @fontsource, not render-blocking
+//     Google Fonts)
 //   - the <header> (via Header.astro)
 //   - the <footer> (via Footer.astro)
 //   - the site JavaScript (via MobileMenuScript.astro)
@@ -17,6 +18,32 @@
 //   - default slot: the unique page body content.
 //
 // Props let a page set its active nav link, extra nav links, and footer tagline.
+//
+// ── PERFORMANCE CHANGES vs. the original layout ──────────────────────────────
+//  • Removed the render-blocking Google Fonts <link> (preconnect + CSS request
+//    to fonts.googleapis.com / fonts.gstatic.com on every page). Fonts are now
+//    self-hosted through @fontsource and bundled by Astro — no third-party
+//    round trip on the critical path. This is the biggest mobile-score win.
+//  • Removed the two raw <link rel="stylesheet"> tags. The merged global.css is
+//    now imported, so Astro minifies, fingerprints, and long-caches it under
+//    /_astro/* automatically (your _headers rule already covers that path).
+//
+// SETUP (one time): install the font packages used across the stylesheet —
+//     npm install @fontsource/montserrat @fontsource/open-sans
+// Montserrat weights used by the CSS: 400, 600, 700, 800. Open Sans: 400, 600.
+// We import the LATIN subset only — the site serves Vernal, UT, so the
+// cyrillic/greek/vietnamese subsets @fontsource also ships would just bloat the
+// build with files no visitor requests. (Browsers gate subsets by unicode-range
+// anyway, but latin-only keeps the build output clean.)
+
+import "@fontsource/montserrat/latin-400.css";
+import "@fontsource/montserrat/latin-600.css";
+import "@fontsource/montserrat/latin-700.css";
+import "@fontsource/montserrat/latin-800.css";
+import "@fontsource/open-sans/latin-400.css";
+import "@fontsource/open-sans/latin-600.css";
+
+import "../styles/global.css";
 
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -37,15 +64,6 @@ const { active, extraNavLinks, footerTagline } = Astro.props;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="/styles.css" />
-  <!-- Additive mobile-only polish; loaded AFTER styles.css so its <=390px /
-       <=360px rules layer on top. Desktop is unaffected. Remove this one line
-       to fully revert to the pre-polish styling. -->
-  <link rel="stylesheet" href="/mobile-polish.css" />
 
   <!-- Per-page metadata: title, description, geo, Open Graph, canonical, JSON-LD, inline styles -->
   <slot name="head" />
