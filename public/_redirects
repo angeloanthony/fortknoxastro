@@ -1,0 +1,55 @@
+# ============================================================================
+# _redirects — Fort Knox Self Storage
+# ----------------------------------------------------------------------------
+# Honored by Cloudflare Workers static assets (same format as Cloudflare Pages
+# and Netlify). Each line: SOURCE  DESTINATION  STATUS
+#
+# Purpose: collapse the dual-URL problem where /about and /about.html both
+# resolved to live pages. Now the extensionless form 301s to the canonical
+# .html version, eliminating duplicate content and consolidating any stray
+# backlinks or crawler hits.
+#
+# Internal links already point to .html exclusively (audited), so these rules
+# only catch external/stale references and direct address-bar typing.
+# ============================================================================
+
+# Root: /index → / (don't expose the bare "index" path; let the homepage be /)
+/index        /        301
+
+# Every other page: extensionless → .html canonical
+/20ft-storage-container-rental         /20ft-storage-container-rental.html         301
+/24-hour-storage-vernal                /24-hour-storage-vernal.html                301
+/40ft-storage-container-rental         /40ft-storage-container-rental.html         301
+/about                                 /about.html                                 301
+/affordable-storage                    /affordable-storage.html                    301
+/best-storage-vernal-utah              /best-storage-vernal-utah.html              301
+/business-storage                      /business-storage.html                      301
+/cheap-storage-vernal-utah             /cheap-storage-vernal-utah.html             301
+/construction-equipment-storage        /construction-equipment-storage.html        301
+/container-sales                       /container-sales.html                       301
+/faq                                   /faq.html                                   301
+/fireproof-storage-vernal              /fireproof-storage-vernal.html              301
+/gallery                               /gallery.html                               301
+/hunting-season-storage                /hunting-season-storage.html                301
+/long-term-storage-vernal              /long-term-storage-vernal.html              301
+/mouse-proof-storage-vernal            /mouse-proof-storage-vernal.html            301
+/moving-storage-vernal                 /moving-storage-vernal.html                 301
+/no-hidden-fees-storage                /no-hidden-fees-storage.html                301
+/oilfield-storage                      /oilfield-storage.html                      301
+/parking                               /parking.html                               301
+/renovation-storage                    /renovation-storage.html                    301
+/reviews                               /reviews.html                               301
+/rv-boat-parking                       /rv-boat-parking.html                       301
+/secure-storage                        /secure-storage.html                        301
+/storage-ballard-utah                  /storage-ballard-utah.html                  301
+/storage-cost-vernal-utah              /storage-cost-vernal-utah.html              301
+/storage-duchesne-utah                 /storage-duchesne-utah.html                 301
+/storage-jensen-utah                   /storage-jensen-utah.html                   301
+/storage-lapoint-utah                  /storage-lapoint-utah.html                  301
+/storage-maeser-utah                   /storage-maeser-utah.html                   301
+/storage-naples-utah                   /storage-naples-utah.html                   301
+/storage-near-me                       /storage-near-me.html                       301
+/storage-roosevelt-utah                /storage-roosevelt-utah.html                301
+/storage-unit-sizes-guide              /storage-unit-sizes-guide.html              301
+/storage-units-vernal-utah             /storage-units-vernal-utah.html             301
+/storage-vernal-comparison             /storage-vernal-comparison.html             301
