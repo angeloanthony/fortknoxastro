@@ -1,0 +1,59 @@
+---
+// Footer.astro — site footer with exact NAP (Pillar 1), partner links, and
+// the "Powered by" credit. Uses the clean mailto: link that 36 of the 37
+// original pages used (the single Cloudflare email-obfuscated variant on the
+// saved index.html was a CDN artifact, normalized here).
+//
+// The only copy that varied between pages was the lead tagline, so it is a
+// prop. The default is the most common original value (19 pages).
+
+interface Props {
+  tagline?: string;
+}
+
+const {
+  tagline = "Your LOCAL source for secure, mouse-proof storage units serving the Uintah Basin! 📦🏔️",
+} = Astro.props;
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+
+      <div class="footer-section">
+        <h3>Fort Knox Self Storage</h3>
+        <p set:html={tagline}></p>
+      </div>
+
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <!-- PILLAR 1: Exact NAP — identical to header, schema, and GBP -->
+        <address style="font-style: normal;">
+          James Richards, Owner/Manager<br>
+          📞 <a href="tel:4358287710" style="color: inherit;">435-828-7710</a><br>
+          📧 <a href="mailto:james.richard500@gmail.com" style="color: inherit;">james.richard500@gmail.com</a><br>
+          2225 South 3250 East, Vernal, Utah 84078<br>
+          <strong style="color: var(--accent-color);">Serving the Uintah Basin Area</strong>
+        </address>
+      </div>
+
+      <div class="footer-section">
+        <h3>Our Family Owned Storage Locations</h3>
+        <p style="margin-bottom: 10px; font-size: 0.9em;">Visit our partner locations:</p>
+        <a href="https://www.ashleyvalleystorage.com/" target="_blank" rel="noopener">Ashley Valley Self Storage</a>
+        <a href="https://www.naples-storage.com/" target="_blank" rel="noopener">Naples Self Storage</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> Fort Knox Self Storage. All rights reserved. Buy local! 🏔️</p>
+      <p style="margin-top: 15px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+        Powered by cozelosdata.com
+        <a href="https://cozelosdata.com" target="_blank" rel="noopener" style="text-decoration: none;">
+          <img src="pictures/cozeloslogo.webp" alt="Cozelos Data" style="height: 30px; width: auto; vertical-align: middle;" loading="lazy">
+        </a>
+      </p>
+    </div>
+  </div>
+</footer>

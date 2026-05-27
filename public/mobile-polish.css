@@ -1,0 +1,242 @@
+/* ============================================================================
+   mobile-polish.css  —  Fort Knox Self Storage
+   ----------------------------------------------------------------------------
+   ADDITIVE, REVERSIBLE mobile-only polish. Loaded AFTER styles.css.
+
+   • Touches ONLY screens <= 390px (and a few extra tweaks <= 360px).
+   • Changes NOTHING on tablet/desktop — every rule is inside a max-width
+     media query at or below the phone range.
+   • Edits NO existing CSS and NO inline styles; it only layers on top.
+   • To revert: remove the <link> to this file. That's it.
+
+   Targets were verified against the real markup/selectors in this project:
+     - the absolute-positioned hero "no fees" badge on index (left: -350px)
+     - oversized headings / section padding
+     - CTA button groups (.cta-buttons, .cta-strip, .hero-cta)
+     - the .table-wrap scroll container (adds a swipe affordance)
+     - .location-map iframe height on small screens
+   ============================================================================ */
+
+
+/* ===========================================================================
+   1. PRIMARY PHONE BREAKPOINT — <= 390px
+   Covers modern iPhones (390/393/430 logical px scale down to this) and the
+   majority of Android devices, plus common Lighthouse mobile widths.
+   =========================================================================== */
+@media (max-width: 390px) {
+
+  /* ---- 1a. FIX: hero "no fees" badge with fixed negative positioning ----
+     On index.astro this image uses inline `position:absolute; left:-350px`,
+     which pushes it off-screen to the left and can trigger horizontal
+     overflow / failed mobile-usability checks. Phones have no room for
+     decorative side art, so we hide it on small screens.
+     Scoped to the hero so the SAFE in-flow copy of nofees.webp on the
+     no-hidden-fees page (width:100%) is never affected.
+     The [style] attribute selector + !important is required to override
+     the element's own inline styles. */
+  .hero .hero-content img[src*="nofees.webp"][style*="absolute"] {
+    display: none !important;
+  }
+
+  /* Belt-and-suspenders: kill any accidental horizontal scroll at the
+     viewport level (your styles.css already sets overflow-x:hidden on
+     html/body in places; this reinforces it only on tiny screens). */
+  html,
+  body {
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+
+  /* Generic safety net: no media element may exceed the viewport width. */
+  img,
+  video,
+  iframe,
+  table {
+    max-width: 100%;
+  }
+
+  /* ---- 1b. Tame oversized headings ----
+     Several sections use large fixed rem/px font sizes (some inline) that
+     are great on desktop but cramped on a ~390px screen. Caps are applied
+     mobile-only; desktop sizes are untouched. */
+  h1 {
+    font-size: clamp(1.6rem, 8vw, 2.1rem) !important;
+    line-height: 1.2 !important;
+    word-break: break-word;
+  }
+  h2 {
+    font-size: clamp(1.35rem, 6.5vw, 1.8rem) !important;
+    line-height: 1.25 !important;
+  }
+  h3 {
+    font-size: clamp(1.15rem, 5.5vw, 1.4rem) !important;
+    line-height: 1.3 !important;
+  }
+  /* Inline-styled section headings (e.g. the compare/section <h2 style="font-size:2.2rem">)
+     are caught by the h2 rule above via !important. */
+
+  /* ---- 1c. Reduce desktop-oriented spacing ----
+     Large vertical section padding eats the whole screen on a phone.
+     Trim the most common heavy paddings. */
+  section {
+    padding-top: 34px !important;
+    padding-bottom: 34px !important;
+  }
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  .hero,
+  .hero-content {
+    padding-top: 8px !important;
+  }
+
+  /* ---- 1d. Button groups: wrap gracefully, full-width, tap-friendly ----
+     CTA clusters can wrap awkwardly (one button orphaned on its own line,
+     uneven widths). Stack them cleanly and make each comfortably tappable. */
+  .cta-buttons,
+  .cta-strip,
+  .hero-cta,
+  .cta-block,
+  .review-btn-row,
+  .faq-cta-block {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 12px !important;
+  }
+  .cta-buttons .btn,
+  .cta-strip .btn,
+  .hero-cta .btn,
+  .cta-block .btn,
+  .faq-cta-block .btn,
+  .btn-primary,
+  .btn-secondary {
+    width: 100% !important;
+    box-sizing: border-box;
+    text-align: center;
+    /* keep comfortably above the ~44px touch-target minimum */
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: normal; /* allow long button labels to wrap instead of overflow */
+  }
+
+  /* ---- 1e. Video / iframe sizing ----
+     The hero video already uses a responsive 56.25% aspect-ratio wrapper,
+     so it's fine. The Google Maps embeds sit in .location-map at a fixed
+     450px height — too tall for a phone. Bring it down. */
+  .location-map {
+    height: 260px !important;
+  }
+  .video-wrapper {
+    /* preserve the 16:9 ratio it already defines; just ensure no overflow */
+    max-width: 100%;
+  }
+
+  /* ---- 1f. Tables: keep overflow-x scroll, add a SWIPE AFFORDANCE ----
+     We deliberately keep the existing horizontal-scroll pattern (valid for
+     SEO/accessibility, preserves table markup). We only make the scroll
+     discoverable: a soft right-edge fade cue + slightly tighter type/padding.
+     The fade is painted on the scroll container via a pseudo-element. */
+  .table-wrap {
+    position: relative;
+    -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
+  }
+  .table-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 28px;
+    pointer-events: none; /* never blocks taps/scroll */
+    background: linear-gradient(
+      to right,
+      rgba(245, 222, 179, 0),
+      rgba(245, 222, 179, 0.9)
+    );
+    border-radius: 0 6px 6px 0;
+  }
+
+  /* Slightly smaller font + tighter padding so more columns fit before
+     scrolling is needed. Applies to the comparison/spec tables. */
+  .table-wrap table,
+  .compare-table,
+  .specs-table,
+  .pricing-table {
+    font-size: 0.85rem !important;
+  }
+  .compare-table th,
+  .compare-table td,
+  .specs-table th,
+  .specs-table td,
+  .pricing-table th,
+  .pricing-table td {
+    padding: 8px 10px !important;
+  }
+
+  /* Comparison tables that are NOT already in a scroll wrapper: give them
+     one so wide rows scroll instead of blowing out the page width. */
+  .compare-table,
+  .specs-table,
+  .pricing-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+  }
+}
+
+
+/* ===========================================================================
+   2. TIGHTER PHONE BREAKPOINT — <= 360px
+   Catches older / smaller Androids (Galaxy S8-era, many budget phones).
+   Just a little extra breathing room on top of the 390px rules.
+   =========================================================================== */
+@media (max-width: 360px) {
+
+  h1 {
+    font-size: clamp(1.45rem, 8vw, 1.85rem) !important;
+  }
+  h2 {
+    font-size: clamp(1.2rem, 6.5vw, 1.55rem) !important;
+  }
+
+  section {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+  }
+  .container {
+    padding-left: 13px !important;
+    padding-right: 13px !important;
+  }
+
+  .location-map {
+    height: 220px !important;
+  }
+
+  /* On the very narrowest screens, add an explicit "swipe" hint on tables
+     so the gesture is unmistakable. Sits at the top-right of the scroll box. */
+  .table-wrap::before {
+    content: "← swipe →";
+    position: absolute;
+    top: -20px;
+    right: 4px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 0.7rem;
+    color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+  }
+  .table-wrap {
+    margin-top: 30px; /* room for the swipe hint above the table */
+  }
+
+  .table-wrap table,
+  .compare-table,
+  .specs-table,
+  .pricing-table {
+    font-size: 0.8rem !important;
+  }
+}

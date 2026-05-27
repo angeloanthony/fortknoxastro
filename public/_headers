@@ -1,0 +1,4 @@
+# Cloudflare Pages / Netlify headers
+# Long-cache the hashed, immutable Astro asset bundle.
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable

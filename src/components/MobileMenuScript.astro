@@ -1,0 +1,37 @@
+---
+// MobileMenuScript.astro — the original site JavaScript, unchanged.
+// Handles: footer year, mobile hamburger toggle, close-on-link-click,
+// and close-on-outside-click. This is the only JS the original site shipped.
+//
+// `is:inline` keeps it as a plain <script> in the page output (no bundling),
+// matching the original behavior exactly with zero added JS framework cost.
+---
+<script is:inline>
+  // Footer year
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const nav = document.getElementById('nav');
+
+  menuToggle.addEventListener('click', function () {
+    nav.classList.toggle('active');
+    this.classList.toggle('active');
+  });
+
+  // Close menu on link click
+  nav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('active');
+      menuToggle.classList.remove('active');
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function (e) {
+    if (!nav.contains(e.target) && !menuToggle.contains(e.target) && nav.classList.contains('active')) {
+      nav.classList.remove('active');
+      menuToggle.classList.remove('active');
+    }
+  });
+</script>

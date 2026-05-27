@@ -1,0 +1,681 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout active="about.html" footerTagline="Your LOCAL source for shipping containers and secure storage serving the Uintah Basin! 📦🏔️">
+  <Fragment slot="head">
+  <!-- ═══ PILLAR 3: TITLE TAG — 58 chars ═══ -->
+  <title>About Fort Knox Self Storage | Vernal, Utah</title>
+
+  <!-- ═══ PILLAR 3: META DESCRIPTION — 156 chars ═══ -->
+  <meta name="description" content="Meet James Richards, local owner of Fort Knox Self Storage in Vernal, UT. Mouse-proof steel containers, 24/7 access, from $130/mo. Call 435-828-7710.">
+
+  <!-- Location Meta -->
+  <meta name="geo.region" content="US-UT">
+  <meta name="geo.placename" content="Vernal">
+  <meta name="geo.position" content="40.4555;-109.5287">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About Fort Knox Self Storage | Vernal, Utah">
+  <meta property="og:description" content="Locally owned by James Richards. Secure, mouse-proof storage containers in Vernal, Utah. 20ft from $130/mo, 40ft from $230/mo. 24/7 access.">
+  <meta property="og:image" content="https://vernalfortknoxselfstorage.com/pictures/fortknoxlogo.webp">
+  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/about.html">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/about.html">
+
+  <!-- ═══ PILLAR 4: SCHEMA MARKUP ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SelfStorage",
+        "@id": "https://vernalfortknoxselfstorage.com/#business",
+        "name": "Fort Knox Self Storage",
+        "url": "https://vernalfortknoxselfstorage.com",
+        "telephone": "+14358287710",
+        "email": "james.richard500@gmail.com",
+        "description": "Fort Knox Self Storage is a locally owned self-storage facility in Vernal, Utah offering secure, mouse-proof steel containers with 24/7 access. 20ft containers from $130/month, 40ft from $230/month. No hidden fees.",
+        "image": "https://vernalfortknoxselfstorage.com/pictures/fortknoxlogo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2225 South 3250 East",
+          "addressLocality": "Vernal",
+          "addressRegion": "UT",
+          "postalCode": "84078",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.4555,
+          "longitude": -109.5287
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        },
+        "priceRange": "$130–$230/month",
+        "areaServed": [
+          { "@type": "City", "name": "Vernal" },
+          { "@type": "City", "name": "Naples" },
+          { "@type": "City", "name": "Jensen" },
+          { "@type": "City", "name": "Roosevelt" }
+        ]
+      },
+      {
+        "@type": "Person",
+        "@id": "https://vernalfortknoxselfstorage.com/#owner",
+        "name": "James Richards",
+        "jobTitle": "Owner & Manager",
+        "telephone": "+14358287710",
+        "email": "james.richard500@gmail.com",
+        "description": "James Richards is the locally owned owner and manager of Fort Knox Self Storage in Vernal, Utah. A Uintah Basin resident, James is available 24/7 and provides the most affordable mouse-proof and fireproof storage in the area.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vernal",
+          "addressRegion": "UT",
+          "postalCode": "84078"
+        },
+        "worksFor": { "@id": "https://vernalfortknoxselfstorage.com/#business" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vernalfortknoxselfstorage.com/" },
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://vernalfortknoxselfstorage.com/about.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ═══ Page Summary Block ═══ */
+    .page-summary-wrap {
+      background: rgba(218,165,32,0.15);
+      border-left: 5px solid var(--accent-color);
+      padding: 16px 22px;
+      margin: 24px 0 0;
+      border-radius: 0 6px 6px 0;
+    }
+    .page-summary {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.65;
+      color: var(--white);
+      margin: 0;
+    }
+    .page-summary a { color: var(--accent-color); text-decoration: underline; }
+    .page-summary-meta {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(255,255,255,0.45);
+      margin-top: 6px;
+      display: block;
+    }
+
+    /* ═══ Breadcrumb ═══ */
+    .breadcrumb {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 16px;
+      text-align: center;
+    }
+    .breadcrumb a { color: var(--accent-color); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* ═══ About layout ═══ */
+    .about-content {
+      padding: 70px 0;
+      background: #F5DEB3 url('https://www.transparenttextures.com/patterns/light-wool.png');
+    }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 50px;
+      align-items: start;
+    }
+    .about-main h2 {
+      font-family: 'Georgia', serif;
+      font-size: 1.9rem;
+      color: var(--primary-dark);
+      margin-bottom: 18px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+    .about-main p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.97rem;
+      color: var(--text-dark);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+    .about-main strong { color: var(--primary-dark); }
+
+    /* Promise summary block */
+    .promise-summary {
+      background: #FFF8DC url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 400px;
+      padding: 24px 26px;
+      border-left: 5px solid var(--accent-color);
+      border: 3px solid var(--primary-dark);
+      border-left: 6px solid var(--accent-color);
+      border-radius: 0 8px 8px 0;
+      margin: 24px 0;
+      box-shadow: var(--shadow-sm);
+    }
+    .promise-summary p {
+      font-size: 1.05rem !important;
+      color: var(--text-dark) !important;
+      line-height: 1.7 !important;
+      margin: 0 !important;
+    }
+
+    /* ═══ Sidebar cards ═══ */
+    .about-sidebar { display: flex; flex-direction: column; gap: 24px; }
+
+    .card {
+      background: #FFF8DC url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 400px;
+      border: 4px solid var(--primary-dark);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .card-header {
+      background: var(--primary-dark);
+      padding: 14px 20px;
+      border-bottom: 3px solid var(--accent-color);
+    }
+    .card-header h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.05rem;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin: 0;
+    }
+    .card-body { padding: 20px; }
+    .card-body h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      margin-bottom: 2px;
+    }
+    .card-body .title {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.82rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px !important;
+    }
+    .card-body p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin-bottom: 10px;
+    }
+    .card-body p:last-child { margin-bottom: 0; }
+    .card-body strong { color: var(--primary-dark); }
+
+    .contact-info { margin-top: 14px; display: flex; flex-direction: column; gap: 8px; }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.92rem;
+      color: var(--primary-dark);
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-item:hover { color: var(--accent-color); }
+    .contact-item .icon { font-size: 1.1rem; }
+
+    /* CTA box in sidebar */
+    .cta-box {
+      background: #CD853F url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 350px;
+      border: 4px solid var(--primary-dark);
+      border-radius: 6px;
+      padding: 24px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+    }
+    .cta-box h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.15rem;
+      color: var(--metal-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .cta-box p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--metal-dark);
+      margin-bottom: 16px;
+      line-height: 1.6;
+    }
+
+    /* ═══ Values section ═══ */
+    .values {
+      padding: 70px 0;
+      background: #E8D5B7 url('https://www.transparenttextures.com/patterns/light-wool.png');
+    }
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 28px;
+      margin-top: 12px;
+    }
+    .value-card {
+      background: #FFF8DC url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 400px;
+      border: 4px solid var(--primary-dark);
+      border-top: 5px solid var(--accent-color);
+      border-radius: 6px;
+      padding: 30px 24px;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .value-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-color);
+    }
+    .value-icon { font-size: 2.6rem; margin-bottom: 14px; display: block; }
+    .value-card h3 {
+      font-family: 'Georgia', serif;
+      font-size: 1.1rem;
+      color: var(--primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+    .value-card p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.9rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ═══ CTA section ═══ */
+    .cta-section {
+      padding: 60px 0;
+      background: #CD853F url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 350px;
+      border-top: 6px solid var(--primary-dark);
+      border-bottom: 6px solid var(--primary-dark);
+      text-align: center;
+    }
+    .cta-section h2 {
+      font-family: 'Georgia', serif;
+      font-size: 2rem;
+      color: var(--metal-dark);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      text-shadow: 1px 1px 3px rgba(218,165,32,0.5);
+    }
+    .cta-section p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1rem;
+      color: var(--metal-dark);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .cta-section .btn { animation: buttonFlash 1.5s ease-in-out infinite; }
+    .cta-section .btn:hover { animation: none; }
+
+    /* ═══ Responsive ═══ */
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      .about-sidebar {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+    }
+    @media (max-width: 600px) {
+      .about-sidebar { grid-template-columns: 1fr; }
+      .values-grid { grid-template-columns: 1fr 1fr; }
+      .cta-section h2 { font-size: 1.5rem; }
+    }
+    @media (max-width: 400px) {
+      .values-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ═══ REVIEW BADGE — shimmer pill shown below call buttons ═══ */
+    .review-nudge {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      background: #ffffff;
+      border: 3px solid #DAA520;
+      border-radius: 50px;
+      padding: 10px 20px 10px 12px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.25), 0 2px 0 rgba(218,165,32,0.4);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+      width: 100%;
+      max-width: 340px;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .review-nudge::before {
+      content: '';
+      position: absolute;
+      top: 0; left: -100%;
+      width: 60%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent);
+      animation: reviewShine 2.8s infinite;
+    }
+    @keyframes reviewShine {
+      0%        { left: -100%; }
+      40%, 100% { left: 140%; }
+    }
+    .review-nudge:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3), 0 2px 0 rgba(218,165,32,0.7);
+      background: #fffde7;
+    }
+    .review-nudge:active { transform: translateY(0); }
+    .review-g {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: conic-gradient(#4285F4 0deg 90deg, #EA4335 90deg 180deg, #FBBC05 180deg 270deg, #34A853 270deg 360deg);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Arial Black', sans-serif;
+      font-size: 1rem; font-weight: 900;
+      color: white;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.35);
+      flex-shrink: 0;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    .review-nudge-text {
+      display: flex; flex-direction: column;
+      align-items: flex-start; gap: 1px;
+      flex: 1;
+    }
+    .review-nudge-top {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem; font-weight: 800;
+      color: #222;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+    .review-nudge-stars { font-size: 0.95rem; color: #F4B400; letter-spacing: 2px; line-height: 1; }
+    .review-nudge-sub {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 0.7rem; color: #777;
+      line-height: 1.3; margin-top: 1px;
+    }
+    .review-nudge-arrow {
+      font-size: 1.2rem; color: #DAA520;
+      font-weight: 900; flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .review-nudge:hover .review-nudge-arrow { transform: translateX(4px); }
+  </style>
+  </Fragment>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero about-hero" aria-label="About page header">
+    <div class="container">
+      <div class="hero-content">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <span>About</span>
+        </nav>
+
+        <!-- PILLAR 3: H1 — one per page, includes primary keyword -->
+        <h1 class="hero-title">About Fort Knox Self Storage — Vernal, Utah</h1>
+        <p class="hero-subtitle">Locally Owned · Mouse-Proof Containers · 24/7 Access</p>
+
+        <!-- PILLAR 3: PAGE SUMMARY BLOCK -->
+        <div class="page-summary-wrap" role="note" aria-label="Business summary">
+          <p class="page-summary">
+            <strong>Fort Knox Self Storage</strong> is a locally owned storage facility in <strong>Vernal, Utah</strong>,
+            operated by owner and manager <strong>James Richards</strong>.
+            Secure, mouse-proof 20ft containers from <strong>$130/month</strong> · 40ft from <strong>$230/month</strong>.
+            24/7 access · fire detection · no hidden fees.
+            Located at <strong>2225 South 3250 East, Vernal UT 84078</strong>.
+            Call <a href="tel:4358287710">James at 435-828-7710</a>.
+          </p>
+          <span class="page-summary-meta">Last updated: <time datetime="2026-02-01">February 2026</time></span>
+        </div>
+
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+  </section>
+
+
+  <!-- ═══ ABOUT CONTENT ═══ -->
+  <section class="about-content" aria-labelledby="story-heading">
+    <div class="container">
+      <div class="about-grid">
+
+        <!-- Main column -->
+        <div class="about-main">
+          <h2 id="story-heading">Our Story</h2>
+          <p>
+            At Fort Knox Self Storage, we understand that finding the right storage solution is about more than just space — it's about peace of mind.
+            Located in <strong>Vernal, Utah</strong>, we've built our reputation on providing secure, clean, and accessible storage that the Uintah Basin community can trust.
+          </p>
+
+          <!-- Promise summary block — E-E-A-T trust signal -->
+          <div class="promise-summary">
+            <p>
+              <strong>The Fort Knox Promise:</strong> We provide high-security, <strong>mouse-proof</strong>, and fireproof storage at competitive prices.
+              Whether you are buying a <strong>40ft steel container</strong> or renting a <strong>20ft unit</strong>, we offer personalized local service
+              and <strong>24/7 access</strong> with a quick call to James at <a href="tel:4358287710" style="color: var(--primary-dark); font-weight: bold;">435-828-7710</a>.
+            </p>
+          </div>
+
+          <!-- Drone tour video -->
+          <div class="western-video-container" style="margin: 36px 0 24px;">
+            <div class="western-frame">
+              <div class="wood-corner top-left"></div>
+              <div class="wood-corner top-right"></div>
+              <div class="wood-corner bottom-left"></div>
+              <div class="wood-corner bottom-right"></div>
+              <div class="video-wrapper">
+                <iframe
+                  width="560" height="315"
+                  src="https://www.youtube.com/embed/S3SFApt5AHI?si=kwM5Yh4Dk9ApcMOX"
+                  title="Fort Knox Self Storage facility drone tour — Vernal, Utah"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen loading="lazy">
+                </iframe>
+              </div>
+            </div>
+          </div>
+          <p style="text-align: center; font-size: 1rem; font-style: italic; color: var(--text-light);">
+            See our secure, well-maintained facility from above.
+          </p>
+
+          <p style="margin-top: 20px; font-weight: 600; color: var(--primary-color);">
+            We proudly serve our neighbors throughout the <strong>Uintah Basin</strong>, including
+            <strong>Vernal, Naples, Jensen, and Roosevelt</strong>. No need to drive to Salt Lake City —
+            we <strong>SELL, DELIVER, and SET UP</strong> shipping containers right here locally.
+          </p>
+
+          <!-- Internal links to service pages -->
+          <p style="margin-top: 16px;">
+            View our <a href="container-sales.html" style="color: var(--primary-dark); font-weight: bold; text-decoration: underline;">container sales options</a>,
+            <a href="parking.html" style="color: var(--primary-dark); font-weight: bold; text-decoration: underline;">RV and boat parking</a>,
+            or read our <a href="faq.html" style="color: var(--primary-dark); font-weight: bold; text-decoration: underline;">frequently asked questions</a>.
+          </p>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="about-sidebar">
+
+          <!-- Owner card — Pillar 6: E-E-A-T trust signal -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Meet Our Owner</h3>
+            </div>
+            <div class="card-body">
+              <h4>James Richards</h4>
+              <p class="title">Owner &amp; Manager — Fort Knox Self Storage</p>
+              <p>
+                James has lived in the Uintah Basin for years and is dedicated to providing exceptional storage solutions
+                and personalized service to every customer. As the local owner, he is available <strong>24/7</strong>
+                to ensure you always have access to your belongings — you call James directly, not a corporate call center.
+              </p>
+              <div class="contact-info">
+                <a href="tel:4358287710" class="contact-item">
+                  <span class="icon">📱</span>
+                  <span>435-828-7710</span>
+                </a>
+                <a href="mailto:james.richard500@gmail.com" class="contact-item">
+                  <span class="icon">📧</span>
+                  <span>james.richard500@gmail.com</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hours card -->
+          <div class="card">
+            <div class="card-header">
+              <h3>Storage Access &amp; Hours</h3>
+            </div>
+            <div class="card-body">
+              <p><strong>Storage Unit Access:</strong><br>24/7 — Every day of the year</p>
+              <p><strong>James Available By Phone:</strong><br>24/7 — Call anytime</p>
+              <p style="font-size: 0.85rem; color: var(--text-light); margin-top: 8px;">
+                Your personal access code gets you in any hour — no restricted times, no holidays off.
+              </p>
+            </div>
+          </div>
+
+          <!-- Sidebar CTA -->
+          <div class="cta-box">
+            <h3>Ready to Get Started?</h3>
+            <p>Call James today — same-day move-in usually available.</p>
+            <a href="tel:4358287710" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif; font-size: 1rem; padding: 14px 28px;">
+              📞 435-828-7710
+            </a>
+            <!-- ★ REVIEW BADGE ★ -->
+            <div style="margin-top: 14px; display: flex; justify-content: center;">
+              <a href="https://www.google.com/maps?cid=12789026406975244841&action=write-review"
+                 target="_blank" rel="noopener"
+                 class="review-nudge"
+                 aria-label="Leave a Google review for Fort Knox Self Storage">
+                <div class="review-g">G</div>
+                <div class="review-nudge-text">
+                  <span class="review-nudge-top">Already a Customer?</span>
+                  <span class="review-nudge-stars">★★★★★</span>
+                  <span class="review-nudge-sub">Leave a Google review — it only takes a minute</span>
+                </div>
+                <span class="review-nudge-arrow">›</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ CORE VALUES ═══ -->
+  <section class="values" aria-labelledby="values-heading">
+    <div class="container">
+      <h2 id="values-heading" class="section-title">Our Core Values</h2>
+      <div class="values-grid">
+
+        <div class="value-card">
+          <span class="value-icon">🔒</span>
+          <h3>Security</h3>
+          <p>Personal access codes, gated entry, and 24/7 fire detection. Your belongings are protected around the clock.</p>
+        </div>
+
+        <div class="value-card">
+          <span class="value-icon">🐭</span>
+          <h3>Mouse-Proof</h3>
+          <p>All-steel sealed shipping containers — no wood framing, no gaps, no rodents or pests. A real advantage over traditional Vernal storage facilities.</p>
+        </div>
+
+        <div class="value-card">
+          <span class="value-icon">🤝</span>
+          <h3>Customer Service</h3>
+          <p>James is a local Uintah Basin resident who answers the phone himself — 24 hours a day. Personalized service, not a 1-800 number.</p>
+        </div>
+
+        <div class="value-card">
+          <span class="value-icon">💰</span>
+          <h3>Honest Pricing</h3>
+          <p>20ft containers from $130/month. 40ft from $230/month. No hidden admin fees, no move-in charges. Price quoted is price paid.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ BOTTOM CTA ═══ -->
+  <section class="cta-section" aria-label="Call to action">
+    <div class="container">
+      <h2>Experience the Fort Knox Difference</h2>
+      <p>
+        Visit our facility at 2225 South 3250 East, Vernal — just south of Naples.<br>
+        See why Uintah Basin residents trust Fort Knox with their storage needs.
+      </p>
+      <div class="cta-buttons">
+        <a href="tel:4358287710" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif;">
+          <span>📞</span> Call James: 435-828-7710
+        </a>
+        <a href="index.html#units" class="btn btn-secondary" style="font-family: 'Montserrat', sans-serif;">
+          View Storage Units
+        </a>
+      </div>
+      <!-- ★ REVIEW BADGE ★ -->
+      <div style="margin-top: 20px; display: flex; justify-content: center;">
+        <a href="https://www.google.com/maps?cid=12789026406975244841&action=write-review"
+           target="_blank" rel="noopener"
+           class="review-nudge"
+           aria-label="Leave a Google review for Fort Knox Self Storage">
+          <div class="review-g">G</div>
+          <div class="review-nudge-text">
+            <span class="review-nudge-top">Happy Customer? Leave a Review</span>
+            <span class="review-nudge-stars">★★★★★</span>
+            <span class="review-nudge-sub">Takes 60 seconds · Helps the community</span>
+          </div>
+          <span class="review-nudge-arrow">›</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER — exact NAP match ═══ -->
+  
+</BaseLayout>

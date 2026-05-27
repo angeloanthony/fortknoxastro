@@ -1,0 +1,60 @@
+---
+// Header.astro — site header + primary navigation.
+// Faithfully reproduces the original markup. The `active` prop marks the
+// current page's nav link (matching the original per-page `class="active"`),
+// and `extraNavLinks` supports the handful of pages that carried an extra
+// contextual nav item (e.g. storage-near-me.html).
+//
+// `active` should be the original HREF of the current page, e.g. "index.html".
+
+export interface NavLink {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  active?: string;
+  extraNavLinks?: NavLink[];
+}
+
+const { active = "", extraNavLinks = [] } = Astro.props;
+
+// Canonical 7-link navigation, identical to every original page.
+const navLinks: NavLink[] = [
+  { href: "index.html", label: "Home" },
+  { href: "about.html", label: "About" },
+  { href: "container-sales.html", label: "Container Sales" },
+  { href: "gallery.html", label: "Gallery" },
+  { href: "parking.html", label: "Auto/RV/Boat Parking" },
+  { href: "reviews.html", label: "Reviews" },
+  { href: "faq.html", label: "FAQ" },
+];
+
+const allLinks = [...navLinks, ...extraNavLinks];
+---
+
+<!-- ═══════════════════════════════════════════
+     HEADER — NAP in header (Pillar 1)
+═══════════════════════════════════════════ -->
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <a href="index.html">
+        <img src="pictures/fortknoxlogo.webp" alt="Fort Knox Self Storage — Vernal Utah Storage Units" class="logo" />
+      </a>
+
+      <!-- Hamburger (mobile only) -->
+      <div class="menu-toggle" id="menuToggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+      <nav class="nav" id="nav" aria-label="Main navigation">
+        {allLinks.map((link) => (
+          <a href={link.href} class={active === link.href ? "active" : undefined}>{link.label}</a>
+        ))}
+      </nav>
+    </div>
+  </div>
+</header>

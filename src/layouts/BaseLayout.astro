@@ -1,0 +1,62 @@
+---
+// BaseLayout.astro — the universal page shell for every Fort Knox page.
+//
+// What the layout OWNS (identical on every original page):
+//   - <!doctype html>, <html lang="en">
+//   - charset + viewport meta
+//   - the global stylesheet (/styles.css)
+//   - the Google Fonts link (Montserrat + Open Sans)
+//   - the <header> (via Header.astro)
+//   - the <footer> (via Footer.astro)
+//   - the site JavaScript (via MobileMenuScript.astro)
+//
+// What each PAGE provides:
+//   - head slot: <title>, <meta description>, geo meta, Open Graph, canonical,
+//     JSON-LD schema, and any page-specific inline <style> — passed verbatim
+//     so all SEO metadata is preserved exactly.
+//   - default slot: the unique page body content.
+//
+// Props let a page set its active nav link, extra nav links, and footer tagline.
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import MobileMenuScript from "../components/MobileMenuScript.astro";
+import type { NavLink } from "../components/Header.astro";
+
+interface Props {
+  active?: string;
+  extraNavLinks?: NavLink[];
+  footerTagline?: string;
+}
+
+const { active, extraNavLinks, footerTagline } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/styles.css" />
+  <!-- Additive mobile-only polish; loaded AFTER styles.css so its <=390px /
+       <=360px rules layer on top. Desktop is unaffected. Remove this one line
+       to fully revert to the pre-polish styling. -->
+  <link rel="stylesheet" href="/mobile-polish.css" />
+
+  <!-- Per-page metadata: title, description, geo, Open Graph, canonical, JSON-LD, inline styles -->
+  <slot name="head" />
+</head>
+<body>
+  <Header active={active} extraNavLinks={extraNavLinks} />
+
+  <slot />
+
+  <Footer tagline={footerTagline} />
+
+  <MobileMenuScript />
+</body>
+</html>

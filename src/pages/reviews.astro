@@ -1,0 +1,659 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout active="reviews.html" footerTagline="Your LOCAL source for shipping containers and secure storage serving the Uintah Basin! 📦🏔️">
+  <Fragment slot="head">
+  <title>Customer Reviews | Fort Knox Self Storage Vernal UT</title>
+  <meta name="description" content="See what Vernal customers say about Fort Knox Self Storage. 5-star reviews praising mouse-proof containers, honest pricing, and James Richards' personal service.">
+
+  <!-- Location Meta -->
+  <meta name="geo.region" content="US-UT">
+  <meta name="geo.placename" content="Vernal">
+  <meta name="geo.position" content="40.4237;-109.4672">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Customer Reviews | Fort Knox Self Storage Vernal UT">
+  <meta property="og:description" content="5-star reviews from Vernal, Utah customers praising Fort Knox Self Storage's mouse-proof containers, honest pricing, and James Richards' personal service.">
+  <meta property="og:image" content="https://vernalfortknoxselfstorage.com/pictures/fortknoxlogo.webp">
+  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/reviews.html">
+
+  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/reviews.html">
+
+  <!-- ═══ SCHEMA — AggregateRating + Reviews + LocalBusiness ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "SelfStorage",
+        "@id": "https://vernalfortknoxselfstorage.com/#business",
+        "name": "Fort Knox Self Storage",
+        "url": "https://vernalfortknoxselfstorage.com",
+        "telephone": "+14358287710",
+        "email": "james.richard500@gmail.com",
+        "image": "https://vernalfortknoxselfstorage.com/pictures/fortknoxlogo.webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "2225 South 3250 East",
+          "addressLocality": "Vernal",
+          "addressRegion": "UT",
+          "postalCode": "84078",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 40.4237,
+          "longitude": -109.4672
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "9",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "review": [
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Kenneth Carpenter" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Fort Knox storage is perfect in being secluded and thus safe from most thieves. Being shipping containers, they are very secure. It gave me confidence in leaving our household in storage while we traveled."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Kc Mulcare" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Very nice and clean place to store anything you want. Their units keep mice and spiders away!"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Christopher Green" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Great place! Storage was perfect and great pricing. James even returned my overpayment money when I closed out the storage early! I will use them again next time I'm in Vernal."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Robyn Harris" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Hands down the best storage units in the basin! Clean, secure units... I love that I don't have to worry about dust all over my belongings too!"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "J B" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "The owner was very helpful and welcoming. It was a tough move for my family to the area, but James gave us a willing hand on many occasions."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Brad Warner" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "This is a unique storage place. The use of conex containers is a very secure and private way to store items. The prices are competitive and the size of the units is better than most."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "James John" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Self service storage. Enough space for everything. Easy access. High quality. Good price. Excellent location. I love everything about this service. Highly recommended."
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Heath Jackson" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "The owner is a very nice gentleman! Super flexible with my rent payments and was very accommodating to my needs! The location is very discreet for security purposes and offers a clean and dry unit!"
+          },
+          {
+            "@type": "Review",
+            "author": { "@type": "Person", "name": "Cassi Kail" },
+            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+            "reviewBody": "Highly recommend Fort Knox storage. Owners are wonderful to work with and place is clean and secure. Have been extremely pleased with our service and are thankful we found them."
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vernalfortknoxselfstorage.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Reviews", "item": "https://vernalfortknoxselfstorage.com/reviews.html" }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Reviews-specific styles only (not duplicated in styles.css) -->
+  <style>
+    .seo-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+    .breadcrumb {
+      font-family: 'Open Sans', sans-serif; font-size: 0.85rem;
+      color: rgba(255,255,255,0.6); margin-bottom: 16px; text-align: center;
+    }
+    .breadcrumb a { color: var(--accent-color); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { margin: 0 6px; }
+
+    /* ─── Stats bar ─── */
+    .stats-bar {
+      padding: 50px 0;
+      background: #F5DEB3 url('https://www.transparenttextures.com/patterns/light-wool.png');
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+    .stat-item {
+      padding: 24px 16px;
+      background: #FFF8DC url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 400px;
+      border: 3px solid var(--primary-dark);
+      border-top: 5px solid var(--accent-color);
+      border-radius: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+    .stat-number {
+      font-family: 'Montserrat', sans-serif; font-size: 3rem;
+      font-weight: 800; color: var(--primary-dark); line-height: 1; margin-bottom: 6px;
+    }
+    .stat-stars { font-size: 1.5rem; color: var(--accent-color); margin: 6px 0; }
+    .stat-label { font-family: 'Open Sans', sans-serif; font-size: 0.9rem; color: var(--text-light); }
+
+    /* ─── Review cards section ─── */
+    .reviews-section {
+      padding: 70px 0;
+      background: #E8D5B7 url('https://www.transparenttextures.com/patterns/light-wool.png');
+    }
+    .review-carousel-wrapper {
+      position: relative; max-width: 1200px; margin: 0 auto; padding: 20px 0;
+    }
+    .review-carousel {
+      display: flex; overflow-x: auto; scroll-behavior: smooth;
+      scroll-snap-type: x mandatory; gap: 24px; padding-bottom: 24px;
+      scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .review-carousel::-webkit-scrollbar { display: none; }
+    .carousel-card {
+      flex: 0 0 auto; width: 340px;
+      background: #FFF8DC url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 400px; border: 3px solid var(--primary-dark);
+      border-top: 5px solid var(--accent-color); border-radius: 6px;
+      padding: 22px 20px; box-shadow: var(--shadow-sm);
+      scroll-snap-align: start; display: flex; flex-direction: column;
+    }
+    .reviewer-header { display: flex; align-items: center; margin-bottom: 14px; gap: 12px; }
+    .reviewer-icon {
+      width: 42px; height: 42px; background: var(--primary-dark);
+      color: var(--accent-color); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.2rem;
+      flex-shrink: 0; border: 2px solid var(--accent-color);
+    }
+    .reviewer-info h4 {
+      font-family: 'Montserrat', sans-serif; font-size: 0.95rem;
+      font-weight: 700; color: var(--primary-dark); margin: 0 0 2px;
+    }
+    .reviewer-info .local-guide {
+      font-family: 'Open Sans', sans-serif; font-size: 0.7rem;
+      color: var(--text-light); font-weight: normal;
+    }
+    .stars { color: var(--accent-color); font-size: 1rem; letter-spacing: 1px; }
+    .review-text {
+      font-family: 'Open Sans', sans-serif; font-size: 0.9rem;
+      line-height: 1.65; color: var(--text-dark); font-style: italic; flex-grow: 1;
+    }
+    .review-text::before { content: '\201C'; color: var(--accent-color); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-right: 3px; }
+    .review-text::after  { content: '\201D'; color: var(--accent-color); font-size: 1.4rem; line-height: 0; vertical-align: -0.3em; margin-left: 3px; }
+    .review-date {
+      margin-top: 14px; font-family: 'Open Sans', sans-serif; font-size: 0.75rem;
+      color: var(--text-light); border-top: 1px solid rgba(101,67,33,0.2); padding-top: 8px;
+    }
+    .nav-btn {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background: var(--primary-dark); border: 2px solid var(--accent-color);
+      color: var(--accent-color); width: 40px; height: 40px; border-radius: 50%;
+      cursor: pointer; z-index: 10; box-shadow: var(--shadow-sm); font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center; transition: background 0.2s;
+    }
+    .nav-btn:hover { background: var(--secondary-color); }
+    .prev-btn { left: -16px; }
+    .next-btn { right: -16px; }
+
+    /* ─── Leave a review section ─── */
+    .leave-review-section {
+      padding: 70px 0;
+      background: #F5DEB3 url('https://www.transparenttextures.com/patterns/light-wool.png');
+    }
+    .leave-review-inner {
+      max-width: 700px; margin: 0 auto;
+      background: #FFF8DC url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 400px; border: 4px solid var(--primary-dark);
+      border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-md);
+    }
+    .leave-review-header {
+      background: var(--primary-dark); padding: 18px 24px; border-bottom: 3px solid var(--accent-color);
+    }
+    .leave-review-header h2 {
+      font-family: 'Georgia', serif; font-size: 1.3rem; color: var(--accent-color);
+      text-transform: uppercase; letter-spacing: 1.5px; margin: 0;
+    }
+    .leave-review-body { padding: 28px 24px; text-align: center; }
+    .leave-review-body p {
+      font-family: 'Open Sans', sans-serif; font-size: 0.95rem;
+      color: var(--text-dark); line-height: 1.7; margin-bottom: 20px;
+    }
+    .review-platform-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 14px; margin: 20px 0 28px;
+    }
+
+    /* ─── Featured quotes ─── */
+    .featured-quotes {
+      padding: 60px 0;
+      background: #E8D5B7 url('https://www.transparenttextures.com/patterns/light-wool.png');
+    }
+    .quote-highlight {
+      max-width: 860px; margin: 0 auto 24px;
+      background: #FFF8DC url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 400px; border: 3px solid var(--primary-dark);
+      border-left: 6px solid var(--accent-color); border-radius: 0 6px 6px 0;
+      padding: 22px 28px; box-shadow: var(--shadow-sm);
+    }
+    .quote-highlight blockquote {
+      font-family: 'Open Sans', sans-serif; font-size: 1.05rem; font-style: italic;
+      color: var(--text-dark); line-height: 1.7; margin: 0 0 10px;
+    }
+    .quote-highlight cite {
+      font-family: 'Montserrat', sans-serif; font-size: 0.82rem; font-weight: 700;
+      color: var(--primary-dark); text-transform: uppercase; letter-spacing: 0.5px; font-style: normal;
+    }
+
+    /* ─── CTA bottom block ─── */
+    .cta-block {
+      background: #CD853F url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-size: 350px; border: 6px solid var(--primary-dark);
+      border-radius: 8px; padding: 40px 36px; text-align: center;
+      box-shadow: inset 0 0 20px rgba(0,0,0,0.2), var(--shadow-md);
+    }
+    .cta-block h2 {
+      font-family: 'Georgia', serif; font-size: 2rem; color: var(--metal-dark);
+      text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px;
+      text-shadow: 1px 1px 3px rgba(218,165,32,0.5);
+    }
+    .cta-block p {
+      font-family: 'Open Sans', sans-serif; font-size: 1rem;
+      color: var(--metal-dark); margin-bottom: 24px; line-height: 1.65;
+    }
+    .cta-block .btn { animation: buttonFlash 1.5s ease-in-out infinite; }
+    .cta-block .btn:hover { animation: none; }
+
+    /* ─── Two-button review row ─── */
+    .review-btn-row {
+      display: flex; gap: 12px; flex-wrap: wrap;
+      justify-content: center; margin-top: 20px;
+    }
+    .review-btn-row a {
+      flex: 1; min-width: 150px;
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: 'Montserrat', sans-serif; font-weight: 800;
+      font-size: 0.88rem; text-transform: uppercase; letter-spacing: 0.5px;
+      text-decoration: none; padding: 13px 18px; border-radius: 50px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .review-btn-write {
+      background: #DAA520; color: #fff; border: 3px solid #DAA520;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+    .review-btn-read {
+      background: transparent; color: #DAA520; border: 3px solid #DAA520;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+    }
+    .review-btn-row a:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(0,0,0,0.35); }
+
+    .review-btn-read-dark {
+      background: var(--primary-dark) !important;
+      color: var(--accent-color) !important;
+    }
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+      .carousel-card { width: 280px; }
+      .prev-btn { left: 0; }
+      .next-btn { right: 0; }
+      .cta-block { padding: 28px 20px; }
+      .cta-block h2 { font-size: 1.5rem; }
+    
+    @media (max-width: 400px) {
+      .stat-number { font-size: 2.2rem; }
+    }
+  </style>
+  </Fragment>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" aria-label="Reviews page header">
+    <div class="container">
+      <div class="hero-content">
+
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="index.html">Home</a><span>›</span><span>Customer Reviews</span>
+        </nav>
+
+        <h1 class="hero-title">Customer Reviews<br>
+          <span style="font-size: 1.3rem; font-weight: 400; text-transform: none; font-style: italic; letter-spacing: 1px;">Fort Knox Self Storage — Vernal, Utah</span>
+        </h1>
+        <p class="hero-subtitle">Real Stories from Uintah Basin Customers ⭐⭐⭐⭐⭐</p>
+
+        <!-- SEO-only: invisible to humans, readable by Google -->
+        <div class="seo-only" aria-hidden="true">
+          Fort Knox Self Storage in Vernal, Utah is rated 4.9 out of 5 stars by customers across the Uintah Basin.
+          Customers consistently praise the mouse-proof steel containers, honest pricing, and the personal service of owner James Richards.
+          Call 435-828-7710. Last updated: February 2026.
+        </div>
+
+        <div class="hero-cta" style="margin-top: 24px;">
+          <a href="https://g.page/r/CSmK2QrCv3uxEBM/review"
+             target="_blank" rel="noopener"
+             class="btn btn-primary"
+             style="font-family: 'Montserrat', sans-serif;"
+             aria-label="Write a Google review for Fort Knox Self Storage">
+            ✍️ Write a Review
+          </a>
+          <a href="https://www.google.com/maps?cid=12789026406975244841"
+             target="_blank" rel="noopener"
+             class="btn btn-secondary"
+             style="font-family: 'Montserrat', sans-serif;"
+             aria-label="Read Google reviews for Fort Knox Self Storage">
+            ★★★★★ Read Reviews
+          </a>
+        </div>
+
+      </div>
+    </div>
+    <div class="hero-overlay"></div>
+  </section>
+
+
+  <!-- ═══ STATS BAR ═══ -->
+  <section class="stats-bar" aria-labelledby="stats-heading">
+    <div class="container">
+      <h2 id="stats-heading" class="section-title">Trusted by the Uintah Basin</h2>
+      <div class="stats-grid">
+
+        <div class="stat-item">
+          <div class="stat-number">4.9</div>
+          <div class="stat-stars">⭐⭐⭐⭐⭐</div>
+          <div class="stat-label">Average Star Rating</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">500+</div>
+          <div class="stat-stars">😊</div>
+          <div class="stat-label">Happy Customers Served</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">98%</div>
+          <div class="stat-stars">👍</div>
+          <div class="stat-label">Would Recommend Us</div>
+        </div>
+
+        <div class="stat-item">
+          <div class="stat-number">20+</div>
+          <div class="stat-stars">📅</div>
+          <div class="stat-label">Years Serving Vernal</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FEATURED REVIEW QUOTES ═══ -->
+  <section class="featured-quotes" aria-labelledby="featured-heading">
+    <div class="container">
+      <h2 id="featured-heading" class="section-title">What Customers Are Saying</h2>
+
+      <div class="quote-highlight">
+        <blockquote>Being shipping containers, they are very secure. It gave me confidence in leaving our household in storage while we traveled.</blockquote>
+        <cite>— Kenneth Carpenter, Vernal UT</cite>
+      </div>
+
+      <div class="quote-highlight">
+        <blockquote>Great place! James even returned my overpayment money when I closed out the storage early! I will use them again next time I'm in Vernal.</blockquote>
+        <cite>— Christopher Green, Vernal UT</cite>
+      </div>
+
+      <div class="quote-highlight">
+        <blockquote>Hands down the best storage units in the basin! Clean, secure units. I love that I don't have to worry about dust all over my belongings.</blockquote>
+        <cite>— Robyn Harris, Uintah Basin</cite>
+      </div>
+
+      <div class="quote-highlight">
+        <blockquote>The use of conex containers is a very secure and private way to store items. The prices are competitive and the size of the units is better than most.</blockquote>
+        <cite>— Brad Warner, Local Guide</cite>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ REVIEW CAROUSEL ═══ -->
+  <section class="reviews-section" aria-labelledby="carousel-heading">
+    <div class="container">
+      <h2 id="carousel-heading" class="section-title">Some Customer Reviews</h2>
+
+      <div class="review-carousel-wrapper">
+        <button class="nav-btn prev-btn" id="prevBtn" aria-label="Previous reviews">&#10094;</button>
+        <button class="nav-btn next-btn" id="nextBtn" aria-label="Next reviews">&#10095;</button>
+
+        <div class="review-carousel" id="reviewTrack">
+
+          <div class="carousel-card">
+            <div class="reviewer-header">
+              <div class="reviewer-icon">K</div>
+              <div class="reviewer-info">
+                <h4>Kenneth Carpenter</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-text">Fort Knox storage is perfect in being secluded and thus safe from most thieves. Being shipping containers, they are very secure. It gave me confidence in leaving our household in storage while we traveled.</p>
+            <div class="review-date">2 years ago · Google</div>
+          </div>
+
+          <div class="carousel-card">
+            <div class="reviewer-header">
+              <div class="reviewer-icon">K</div>
+              <div class="reviewer-info">
+                <h4>Kc Mulcare <span class="local-guide">· Local Guide</span></h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-text">Very nice and clean place to store anything you want. Their units keep mice and spiders away!</p>
+            <div class="review-date">7 years ago · Google</div>
+          </div>
+
+          <div class="carousel-card">
+            <div class="reviewer-header">
+              <div class="reviewer-icon">C</div>
+              <div class="reviewer-info">
+                <h4>Christopher Green</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-text">Great place! Storage was perfect and great pricing. James even returned my overpayment money when I closed out the storage early! I will use them again next time I'm in Vernal.</p>
+            <div class="review-date">4 years ago · Google</div>
+          </div>
+
+          <div class="carousel-card">
+            <div class="reviewer-header">
+              <div class="reviewer-icon">R</div>
+              <div class="reviewer-info">
+                <h4>Robyn Harris</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-text">Hands down the best storage units in the basin! Clean, secure units. I love that I don't have to worry about dust all over my belongings too!</p>
+            <div class="review-date">3 years ago · Google</div>
+          </div>
+
+          <div class="carousel-card">
+            <div class="reviewer-header">
+              <div class="reviewer-icon">J</div>
+              <div class="reviewer-info">
+                <h4>J B</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-text">The owner was very helpful and welcoming. It was a tough move for my family to the area, but James gave us a willing hand on many occasions.</p>
+            <div class="review-date">2 years ago · Google</div>
+          </div>
+
+          <div class="carousel-card">
+            <div class="reviewer-header">
+              <div class="reviewer-icon">B</div>
+              <div class="reviewer-info">
+                <h4>Brad Warner <span class="local-guide">· Local Guide</span></h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-text">This is a unique storage place. The use of conex containers is a very secure and private way to store items. The prices are competitive and the size of the units is better than most.</p>
+            <div class="review-date">5 years ago · Google</div>
+          </div>
+
+          <div class="carousel-card">
+            <div class="reviewer-header">
+              <div class="reviewer-icon">J</div>
+              <div class="reviewer-info">
+                <h4>James John <span class="local-guide">· Local Guide</span></h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-text">Self service storage. Enough space for everything. Easy access. High quality. Good price. Excellent location. I love everything about this service. Highly recommended.</p>
+            <div class="review-date">5 years ago · Google</div>
+          </div>
+
+          <div class="carousel-card">
+            <div class="reviewer-header">
+              <div class="reviewer-icon">H</div>
+              <div class="reviewer-info">
+                <h4>Heath Jackson</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-text">The owner is a very nice gentleman! Super flexible with my rent payments and very accommodating to my needs! The location is very discreet for security purposes and offers a clean and dry unit!</p>
+            <div class="review-date">1 year ago · Google</div>
+          </div>
+
+          <div class="carousel-card">
+            <div class="reviewer-header">
+              <div class="reviewer-icon">C</div>
+              <div class="reviewer-info">
+                <h4>Cassi Kail</h4>
+                <div class="stars">★★★★★</div>
+              </div>
+            </div>
+            <p class="review-text">Highly recommend Fort Knox storage. Owners are wonderful to work with and place is clean and secure. Have been extremely pleased with our service and are thankful we found them.</p>
+            <div class="review-date">4 years ago · Google</div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Read all reviews button -->
+      <div style="text-align: center; margin-top: 32px;">
+        <a href="https://www.google.com/maps?cid=12789026406975244841"
+           target="_blank" rel="noopener"
+           class="btn btn-primary"
+           style="font-family: 'Montserrat', sans-serif;">
+          ⭐ Read All Reviews on Google
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ LEAVE A REVIEW ═══ -->
+  <section class="leave-review-section" id="leave-review" aria-labelledby="leave-review-heading">
+    <div class="container">
+      <div class="leave-review-inner">
+        <div class="leave-review-header">
+          <h2 id="leave-review-heading">Share Your Experience</h2>
+        </div>
+        <div class="leave-review-body">
+          <p>Have you rented from Fort Knox Self Storage? Your review helps other Uintah Basin families find secure, honest storage. It only takes a minute!</p>
+
+          <div class="review-platform-grid">
+            <a href="https://www.google.com/maps?cid=12789026406975244841&action=write-review"
+               target="_blank" rel="noopener"
+               class="btn btn-secondary"
+               style="font-family: 'Montserrat', sans-serif; text-align: center;">
+              ⭐ Google
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=100086379014007"
+               target="_blank" rel="noopener"
+               class="btn btn-secondary"
+               style="font-family: 'Montserrat', sans-serif; text-align: center;">
+              📘 Facebook
+            </a>
+            <a href="https://www.yelp.com/writeareview/biz/fort-knox-self-storage-vernal"
+               target="_blank" rel="noopener"
+               class="btn btn-secondary"
+               style="font-family: 'Montserrat', sans-serif; text-align: center;">
+              💼 Yelp
+            </a>
+          </div>
+
+          <p style="font-size: 0.9rem; color: var(--text-light); margin-top: 0;">
+            Or contact James directly to share feedback:
+          </p>
+          <div class="contact-info">
+            <a href="tel:4358287710" class="contact-item"><span>📱</span><span>435-828-7710</span></a>
+            <a href="mailto:james.richard500@gmail.com" class="contact-item"><span>📧</span><span>james.richard500@gmail.com</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ BOTTOM CTA ═══ -->
+  <section style="padding: 60px 0; background: #E8D5B7 url('https://www.transparenttextures.com/patterns/light-wool.png');" aria-label="Call to action">
+    <div class="container" style="max-width: 700px;">
+      <div class="cta-block">
+        <h2>Ready to Join Our Customers?</h2>
+        <p>
+          Experience the Fort Knox difference for yourself.<br>
+          Mouse-proof containers from $130/month · 24/7 access · no hidden fees.
+        </p>
+        <a href="tel:4358287710" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem;">
+          📞 Call James: 435-828-7710
+        </a>
+
+        <!-- ★ REVIEW BUTTONS ★ -->
+        <div class="review-btn-row">
+          <a href="https://g.page/r/CSmK2QrCv3uxEBM/review"
+             target="_blank" rel="noopener" class="review-btn-write"
+             aria-label="Write a Google review for Fort Knox Self Storage">
+            ✍️ Write a Review
+          </a>
+          <a href="https://www.google.com/maps?cid=12789026406975244841"
+             target="_blank" rel="noopener" class="review-btn-read review-btn-read-dark"
+             aria-label="Read Google reviews for Fort Knox Self Storage">
+            ★★★★★ Read Reviews
+          </a>
+        </div>
+
+        <p style="margin-top: 16px; font-size: 0.9rem; opacity: 0.85;">
+          <strong>2225 South 3250 East, Vernal, Utah 84078</strong>
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  
+</BaseLayout>
