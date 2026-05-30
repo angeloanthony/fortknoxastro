@@ -1,6 +1,8 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 
+import cloudflare from "@astrojs/cloudflare";
+
 // https://astro.build/config
 export default defineConfig({
   // Public production URL. Used for sitemap generation and absolute-URL helpers.
@@ -21,4 +23,6 @@ export default defineConfig({
   // Keep links exactly as authored — never auto-append or strip trailing
   // slashes, so internal .html links continue to match the emitted files.
   trailingSlash: "ignore",
+
+  adapter: cloudflare(),
 });
