@@ -3,9 +3,11 @@
 // Faithfully reproduces the original markup. The `active` prop marks the
 // current page's nav link (matching the original per-page `class="active"`),
 // and `extraNavLinks` supports the handful of pages that carried an extra
-// contextual nav item (e.g. storage-near-me.html).
+// contextual nav item (e.g. /storage-near-me).
 //
-// `active` should be the original HREF of the current page, e.g. "index.html".
+// `active` must equal the current page's canonical extensionless path, e.g. "/"
+// for the homepage or "/about". It is compared to link.href by string equality,
+// so the two must stay in the same form.
 //
 // ── ACCESSIBILITY CHANGE vs. the original ───────────────────────────────────
 // The mobile hamburger was a <div>, which is not focusable or announced to
@@ -32,13 +34,13 @@ const { active = "", extraNavLinks = [] } = Astro.props;
 
 // Canonical 7-link navigation, identical to every original page.
 const navLinks: NavLink[] = [
-  { href: "index.html", label: "Home" },
-  { href: "about.html", label: "About" },
-  { href: "container-sales.html", label: "Container Sales" },
-  { href: "gallery.html", label: "Gallery" },
-  { href: "parking.html", label: "Auto/RV/Boat Parking" },
-  { href: "reviews.html", label: "Reviews" },
-  { href: "faq.html", label: "FAQ" },
+  { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
+  { href: "/container-sales", label: "Container Sales" },
+  { href: "/gallery", label: "Gallery" },
+  { href: "/parking", label: "Auto/RV/Boat Parking" },
+  { href: "/reviews", label: "Reviews" },
+  { href: "/faq", label: "FAQ" },
 ];
 
 const allLinks = [...navLinks, ...extraNavLinks];
@@ -50,7 +52,7 @@ const allLinks = [...navLinks, ...extraNavLinks];
 <header class="header">
   <div class="container">
     <div class="header-content">
-      <a href="index.html">
+      <a href="/">
         <img src="pictures/fortknoxlogo.webp" alt="Fort Knox Self Storage — Vernal Utah Storage Units" class="logo" width="290" height="290" />
       </a>
 

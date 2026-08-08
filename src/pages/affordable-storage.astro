@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout extraNavLinks={[{ href: "moving-storage-vernal.html", label: "temporary moving storage" }]} footerTagline="Your LOCAL source for affordable, mouse-proof storage containers serving the Uintah Basin! 📦🏔️">
+<BaseLayout extraNavLinks={[{ href: "/moving-storage-vernal", label: "temporary moving storage" }]} footerTagline="Your LOCAL source for affordable, mouse-proof storage containers serving the Uintah Basin! 📦🏔️">
   <Fragment slot="head">
   <!-- ═══ PILLAR 3: TITLE TAG — 57 chars ═══ -->
   <title>Affordable Self Storage Vernal UT | Fort Knox Storage</title>
@@ -19,10 +19,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <meta property="og:title" content="Affordable Self Storage Vernal UT | Fort Knox Storage">
   <meta property="og:description" content="Affordable storage in Vernal, Utah. 20ft from $130/mo, no deposit, no hidden fees, first 2 months FREE. Call James: 435-828-7710.">
   <meta property="og:image" content="https://vernalfortknoxselfstorage.com/pictures/fortknoxlogo.webp">
-  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/affordable-storage.html">
+  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/affordable-storage">
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/affordable-storage.html">
+  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/affordable-storage">
 
   <!-- ═══ PILLAR 4: SCHEMA MARKUP — JSON-LD @graph ═══ -->
   <script type="application/ld+json">
@@ -183,7 +183,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       {
         "@type": "WebPage",
         "name": "Affordable Self Storage Vernal UT | Fort Knox Storage",
-        "url": "https://vernalfortknoxselfstorage.com/affordable-storage.html",
+        "url": "https://vernalfortknoxselfstorage.com/affordable-storage",
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": [".page-summary", ".voice-answer-block", "h1"]
@@ -192,7 +192,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           "@type": "BreadcrumbList",
           "itemListElement": [
             { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vernalfortknoxselfstorage.com/" },
-            { "@type": "ListItem", "position": 2, "name": "Affordable Storage", "item": "https://vernalfortknoxselfstorage.com/affordable-storage.html" }
+            { "@type": "ListItem", "position": 2, "name": "Affordable Storage", "item": "https://vernalfortknoxselfstorage.com/affordable-storage" }
           ]
         }
       }
@@ -204,7 +204,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- ═══ BREADCRUMB ═══ -->
   <nav class="breadcrumb-bar" aria-label="Breadcrumb">
     <div class="container">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <span>›</span>
       <span class="current">Affordable Storage — Vernal, UT</span>
     </div>
@@ -326,7 +326,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <div class="savings-price">$100<span>/mo</span></div>
           <div class="savings-free">Flat rate — no surprises</div>
           <div class="savings-vs">Others charge $150+/mo + fees</div>
-          <a href="parking.html" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif; font-size: 0.88rem; padding: 12px 24px; margin-top: 16px; display: inline-flex;">
+          <a href="/parking" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif; font-size: 0.88rem; padding: 12px 24px; margin-top: 16px; display: inline-flex;">
             View Parking →
           </a>
         </div>
@@ -411,7 +411,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <li>🚫 No hidden fees</li>
               <li>📍 Near Dinosaur National Monument</li>
             </ul>
-            <a href="parking.html" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-family: 'Montserrat', sans-serif;">
+            <a href="/parking" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-family: 'Montserrat', sans-serif;">
               View RV &amp; Boat Parking →
             </a>
           </div>
@@ -674,7 +674,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div style="text-align: center; margin-top: 32px;">
-        <a href="faq.html" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif; display: inline-flex; align-items: center; gap: 10px;">
+        <a href="/faq" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif; display: inline-flex; align-items: center; gap: 10px;">
           See All FAQ →
         </a>
       </div>
@@ -730,12 +730,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Explore More at Fort Knox Self Storage
       </h2>
       <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
-        <a href="index.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">🏠 Home</a>
-        <a href="storage-near-me.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">📍 Storage Near Me</a>
-        <a href="parking.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">🚗 RV &amp; Boat Parking</a>
-        <a href="container-sales.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">📦 Container Sizes</a>
-        <a href="faq.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">❓ FAQ</a>
-        <a href="reviews.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">⭐ Reviews</a>
+        <a href="/" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">🏠 Home</a>
+        <a href="/storage-near-me" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">📍 Storage Near Me</a>
+        <a href="/parking" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">🚗 RV &amp; Boat Parking</a>
+        <a href="/container-sales" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">📦 Container Sizes</a>
+        <a href="/faq" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">❓ FAQ</a>
+        <a href="/reviews" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">⭐ Reviews</a>
       </div>
     </div>
   </section>

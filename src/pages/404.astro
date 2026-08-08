@@ -1,0 +1,40 @@
+---
+// 404.astro — genuine not-found page.
+//
+// Astro emits this to dist/404.html, which Cloudflare serves for unmatched
+// routes with a real 404 status. Before this file existed, Cloudflare fell back
+// to serving the homepage with HTTP 200, which made every typo, dead backlink,
+// and stale URL look to Googlebot like a duplicate of the homepage.
+//
+// Deliberately noindex + absent from sitemap.xml.
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+<BaseLayout>
+  <Fragment slot="head">
+  <title>Page Not Found | Fort Knox Self Storage</title>
+  <meta name="robots" content="noindex, follow" />
+  </Fragment>
+
+  <section class="section">
+    <div class="container" style="text-align: center; padding: 60px 20px;">
+      <h1>Page Not Found</h1>
+      <p style="max-width: 640px; margin: 16px auto 32px;">
+        That page doesn't exist or has moved. Here's where most people are headed:
+      </p>
+
+      <ul style="list-style: none; padding: 0; margin: 0 auto 32px; max-width: 480px; text-align: left; display: inline-block;">
+        <li><a href="/">Home</a></li>
+        <li><a href="/storage-units-vernal-utah">Storage Units in Vernal, Utah</a></li>
+        <li><a href="/parking">Auto / RV / Boat Parking</a></li>
+        <li><a href="/container-sales">Container Sales</a></li>
+        <li><a href="/faq">FAQ</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+
+      <p>
+        Need a hand? Call James at
+        <a href="tel:4358287710">435-828-7710</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

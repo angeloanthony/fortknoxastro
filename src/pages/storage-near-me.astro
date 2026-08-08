@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout extraNavLinks={[{ href: "storage-duchesne-utah.html", label: "Storage Near Duchesne" }]} footerTagline="Your LOCAL source for secure, mouse-proof storage containers serving the Uintah Basin! 📦🏔️">
+<BaseLayout extraNavLinks={[{ href: "/storage-duchesne-utah", label: "Storage Near Duchesne" }]} footerTagline="Your LOCAL source for secure, mouse-proof storage containers serving the Uintah Basin! 📦🏔️">
   <Fragment slot="head">
   <!-- ═══ PILLAR 3: TITLE TAG — 55 chars: Primary Keyword | Business Name ═══ -->
   <title>Storage Near Me Vernal UT | Fort Knox Self Storage</title>
@@ -19,10 +19,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <meta property="og:title" content="Storage Near Me Vernal UT | Fort Knox Self Storage">
   <meta property="og:description" content="Mouse-proof storage containers near you in Vernal, Utah. Starting $130/month. No deposit. 24/7 access. First 2 months FREE. Call James: 435-828-7710.">
   <meta property="og:image" content="https://vernalfortknoxselfstorage.com/pictures/fortknoxlogo.webp">
-  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/storage-near-me.html">
+  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/storage-near-me">
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/storage-near-me.html">
+  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/storage-near-me">
 
   <!-- ═══ PILLAR 4: SCHEMA MARKUP — JSON-LD @graph ═══ -->
   <script type="application/ld+json">
@@ -195,7 +195,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       {
         "@type": "WebPage",
         "name": "Storage Near Me Vernal UT | Fort Knox Self Storage",
-        "url": "https://vernalfortknoxselfstorage.com/storage-near-me.html",
+        "url": "https://vernalfortknoxselfstorage.com/storage-near-me",
         "speakable": {
           "@type": "SpeakableSpecification",
           "cssSelector": [".page-summary", ".voice-answer-block", ".quick-answers", "h1"]
@@ -213,7 +213,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               "@type": "ListItem",
               "position": 2,
               "name": "Storage Near Me",
-              "item": "https://vernalfortknoxselfstorage.com/storage-near-me.html"
+              "item": "https://vernalfortknoxselfstorage.com/storage-near-me"
             }
           ]
         }
@@ -226,7 +226,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <!-- Breadcrumb -->
   <nav class="breadcrumb-bar" aria-label="Breadcrumb">
     <div class="container">
-      <a href="index.html">Home</a>
+      <a href="/">Home</a>
       <span>›</span>
       <span class="current">Storage Near Me — Vernal, UT</span>
     </div>
@@ -438,7 +438,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
               <li>✅ Flat monthly rate — no surprises</li>
               <li>📍 Near Dinosaur National Monument</li>
             </ul>
-            <a href="parking.html" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-family: 'Montserrat', sans-serif;">
+            <a href="/parking" class="btn btn-primary" style="width: 100%; text-align: center; display: block; font-family: 'Montserrat', sans-serif;">
               View RV &amp; Boat Parking →
             </a>
           </div>
@@ -751,7 +751,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
 
       <div style="text-align: center; margin-top: 32px;">
-        <a href="faq.html" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif; display: inline-flex; align-items: center; gap: 10px;">
+        <a href="/faq" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif; display: inline-flex; align-items: center; gap: 10px;">
           See All FAQ →
         </a>
       </div>
@@ -811,12 +811,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         Explore More at Fort Knox Self Storage
       </h2>
       <div style="display: flex; flex-wrap: wrap; gap: 14px; justify-content: center;">
-        <a href="index.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">🏠 Home</a>
-        <a href="parking.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">🚗 RV &amp; Boat Parking</a>
-        <a href="container-sales.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">📦 Container Sizes</a>
-        <a href="faq.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">❓ All FAQ</a>
-        <a href="reviews.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">⭐ Reviews</a>
-        <a href="about.html" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">👤 About James</a>
+        <a href="/" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">🏠 Home</a>
+        <a href="/parking" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">🚗 RV &amp; Boat Parking</a>
+        <a href="/container-sales" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">📦 Container Sizes</a>
+        <a href="/faq" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">❓ All FAQ</a>
+        <a href="/reviews" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">⭐ Reviews</a>
+        <a href="/about" class="btn" style="background: var(--primary-dark); color: white; font-family: 'Montserrat', sans-serif; font-size: 0.9rem;">👤 About James</a>
       </div>
     </div>
   </section>

@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout active="gallery.html" footerTagline="Your LOCAL source for shipping containers and secure storage serving the Uintah Basin! 📦🏔️">
+<BaseLayout active="/gallery" footerTagline="Your LOCAL source for shipping containers and secure storage serving the Uintah Basin! 📦🏔️">
   <Fragment slot="head">
   <title>Photo Gallery | Fort Knox Self Storage Vernal UT</title>
   <meta name="description" content="See real photos of Fort Knox Self Storage in Vernal, Utah. Steel containers, wide driveways, drive-up access &amp; 24/7 security. Call James: 435-828-7710.">
@@ -16,9 +16,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <meta property="og:title" content="Photo Gallery | Fort Knox Self Storage Vernal UT">
   <meta property="og:description" content="Real photos of Fort Knox Self Storage in Vernal, Utah — steel containers, wide driveways, drive-up access, and 24/7 security. Call James Richards: 435-828-7710.">
   <meta property="og:image" content="https://vernalfortknoxselfstorage.com/pictures/fortknox2.webp">
-  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/gallery.html">
+  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/gallery">
 
-  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/gallery.html">
+  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/gallery">
 
   <script type="application/ld+json">
   {
@@ -57,10 +57,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       },
       {
         "@type": "ImageGallery",
-        "@id": "https://vernalfortknoxselfstorage.com/gallery.html#gallery",
+        "@id": "https://vernalfortknoxselfstorage.com/gallery#gallery",
         "name": "Fort Knox Self Storage Facility Photos — Vernal, Utah",
         "description": "Photos of Fort Knox Self Storage in Vernal, Utah showing 40ft steel shipping containers, drive-up access, security locks, and the gated facility.",
-        "url": "https://vernalfortknoxselfstorage.com/gallery.html",
+        "url": "https://vernalfortknoxselfstorage.com/gallery",
         "image": [
           { "@type": "ImageObject", "contentUrl": "https://vernalfortknoxselfstorage.com/pictures/fortknox2.webp", "name": "Fort Knox Self Storage secure facility — Vernal, Utah" },
           { "@type": "ImageObject", "contentUrl": "https://vernalfortknoxselfstorage.com/pictures/Row40Foot1.webp", "name": "Rows of 40ft storage containers — Fort Knox Vernal UT" },
@@ -75,7 +75,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vernalfortknoxselfstorage.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://vernalfortknoxselfstorage.com/gallery.html" }
+          { "@type": "ListItem", "position": 2, "name": "Gallery", "item": "https://vernalfortknoxselfstorage.com/gallery" }
         ]
       }
     ]
@@ -211,7 +211,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="hero-content">
 
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a><span>›</span><span>Photo Gallery</span>
+          <a href="/">Home</a><span>›</span><span>Photo Gallery</span>
         </nav>
 
         <h1 class="hero-title">Fort Knox Self Storage<br>
@@ -230,7 +230,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           <a href="tel:4358287710" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif;">
             <span>📞</span> 435-828-7710
           </a>
-          <a href="index.html#contact" class="btn btn-secondary" style="font-family: 'Montserrat', sans-serif;">
+          <a href="/#contact" class="btn btn-secondary" style="font-family: 'Montserrat', sans-serif;">
             <span>📍</span> Visit Us
           </a>
         </div>
@@ -476,11 +476,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container">
       <h2 id="related-heading" class="section-title">More About Fort Knox</h2>
       <div class="related-grid">
-        <a href="index.html" class="related-card">
+        <a href="/" class="related-card">
           <h3>📦 Storage Unit Rentals</h3>
           <p>Mouse-proof 20ft and 40ft containers from $130/month. First 2 months FREE with 6-month contract.</p>
         </a>
-        <a href="reviews.html" class="related-card">
+        <a href="/reviews" class="related-card">
           <h3>⭐ Customer Reviews</h3>
           <p>Rated 4.9/5 stars by Uintah Basin customers. See what your neighbors say about Fort Knox.</p>
         </a>

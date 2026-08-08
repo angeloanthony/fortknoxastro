@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout active="about.html" footerTagline="Your LOCAL source for shipping containers and secure storage serving the Uintah Basin! 📦🏔️">
+<BaseLayout active="/about" footerTagline="Your LOCAL source for shipping containers and secure storage serving the Uintah Basin! 📦🏔️">
   <Fragment slot="head">
   <!-- ═══ PILLAR 3: TITLE TAG — 58 chars ═══ -->
   <title>About Fort Knox Self Storage | Vernal, Utah</title>
@@ -19,10 +19,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <meta property="og:title" content="About Fort Knox Self Storage | Vernal, Utah">
   <meta property="og:description" content="Locally owned by James Richards. Secure, mouse-proof storage containers in Vernal, Utah. 20ft from $130/mo, 40ft from $230/mo. 24/7 access.">
   <meta property="og:image" content="https://vernalfortknoxselfstorage.com/pictures/fortknoxlogo.webp">
-  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/about.html">
+  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/about">
 
   <!-- Canonical -->
-  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/about.html">
+  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/about">
 
   <!-- ═══ PILLAR 4: SCHEMA MARKUP ═══ -->
   <script type="application/ld+json">
@@ -85,7 +85,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vernalfortknoxselfstorage.com/" },
-          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://vernalfortknoxselfstorage.com/about.html" }
+          { "@type": "ListItem", "position": 2, "name": "About", "item": "https://vernalfortknoxselfstorage.com/about" }
         ]
       }
     ]
@@ -446,7 +446,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="hero-content">
 
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
           <span>›</span>
           <span>About</span>
         </nav>
@@ -527,9 +527,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
           <!-- Internal links to service pages -->
           <p style="margin-top: 16px;">
-            View our <a href="container-sales.html" style="color: var(--primary-dark); font-weight: bold; text-decoration: underline;">container sales options</a>,
-            <a href="parking.html" style="color: var(--primary-dark); font-weight: bold; text-decoration: underline;">RV and boat parking</a>,
-            or read our <a href="faq.html" style="color: var(--primary-dark); font-weight: bold; text-decoration: underline;">frequently asked questions</a>.
+            View our <a href="/container-sales" style="color: var(--primary-dark); font-weight: bold; text-decoration: underline;">container sales options</a>,
+            <a href="/parking" style="color: var(--primary-dark); font-weight: bold; text-decoration: underline;">RV and boat parking</a>,
+            or read our <a href="/faq" style="color: var(--primary-dark); font-weight: bold; text-decoration: underline;">frequently asked questions</a>.
           </p>
         </div>
 
@@ -653,7 +653,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <a href="tel:4358287710" class="btn btn-primary" style="font-family: 'Montserrat', sans-serif;">
           <span>📞</span> Call James: 435-828-7710
         </a>
-        <a href="index.html#units" class="btn btn-secondary" style="font-family: 'Montserrat', sans-serif;">
+        <a href="/#units" class="btn btn-secondary" style="font-family: 'Montserrat', sans-serif;">
           View Storage Units
         </a>
       </div>

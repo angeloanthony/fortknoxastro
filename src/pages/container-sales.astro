@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
-<BaseLayout active="container-sales.html" footerTagline="Your LOCAL source for shipping containers and secure storage serving the Uintah Basin! 📦🏔️">
+<BaseLayout active="/container-sales" footerTagline="Your LOCAL source for shipping containers and secure storage serving the Uintah Basin! 📦🏔️">
   <Fragment slot="head">
   <title>Shipping Containers for Sale Vernal UT | Fort Knox</title>
   <meta name="description" content="Buy 20ft &amp; 40ft shipping containers in Vernal, Utah. Delivery &amp; setup included in the Uintah Basin. Local service, competitive prices. Call James: 435-828-7710.">
@@ -12,8 +12,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   <meta property="og:title" content="Shipping Containers for Sale Vernal UT | Fort Knox Self Storage">
   <meta property="og:description" content="Buy 20ft and 40ft steel shipping containers locally in Vernal, Utah. Delivery and professional setup included throughout the Uintah Basin. Call James: 435-828-7710.">
   <meta property="og:image" content="https://vernalfortknoxselfstorage.com/pictures/James21.webp">
-  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/container-sales.html">
-  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/container-sales.html">
+  <meta property="og:url" content="https://vernalfortknoxselfstorage.com/container-sales">
+  <link rel="canonical" href="https://vernalfortknoxselfstorage.com/container-sales">
 
   <script type="application/ld+json">
   {
@@ -46,7 +46,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       },
       {
         "@type": "Product",
-        "@id": "https://vernalfortknoxselfstorage.com/container-sales.html#product",
+        "@id": "https://vernalfortknoxselfstorage.com/container-sales#product",
         "name": "Steel Shipping Containers for Sale — Vernal, Utah",
         "description": "New and used 20ft and 40ft high-security steel shipping containers for sale in Vernal, Utah. Mouse-proof, fireproof, insect-proof. Delivery and professional setup included throughout the Uintah Basin.",
         "image": [
@@ -59,7 +59,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           {
             "@type": "Offer",
             "name": "20ft Steel Shipping Container",
-            "url": "https://vernalfortknoxselfstorage.com/container-sales.html",
+            "url": "https://vernalfortknoxselfstorage.com/container-sales",
             "priceCurrency": "USD", "price": "4000", "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
             "itemCondition": "https://schema.org/UsedCondition",
@@ -68,7 +68,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           {
             "@type": "Offer",
             "name": "40ft Steel Shipping Container",
-            "url": "https://vernalfortknoxselfstorage.com/container-sales.html",
+            "url": "https://vernalfortknoxselfstorage.com/container-sales",
             "priceCurrency": "USD", "price": "7500", "priceValidUntil": "2026-12-31",
             "availability": "https://schema.org/InStock",
             "itemCondition": "https://schema.org/UsedCondition",
@@ -89,7 +89,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         "@type": "BreadcrumbList",
         "itemListElement": [
           { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://vernalfortknoxselfstorage.com/" },
-          { "@type": "ListItem", "position": 2, "name": "Container Sales", "item": "https://vernalfortknoxselfstorage.com/container-sales.html" }
+          { "@type": "ListItem", "position": 2, "name": "Container Sales", "item": "https://vernalfortknoxselfstorage.com/container-sales" }
         ]
       }
     ]
@@ -103,7 +103,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <div class="hero-content">
 
         <nav class="breadcrumb" aria-label="Breadcrumb">
-          <a href="index.html">Home</a>
+          <a href="/">Home</a>
           <span>›</span>
           <span>Container Sales</span>
         </nav>
@@ -455,7 +455,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       </div>
       <p style="text-align:center;margin-top:24px;font-family:'Open Sans',sans-serif;font-size:0.9rem;color:var(--text-light);">
-        More questions? See our full <a href="faq.html" style="color:var(--primary-dark);font-weight:bold;">FAQ page →</a>
+        More questions? See our full <a href="/faq" style="color:var(--primary-dark);font-weight:bold;">FAQ page →</a>
       </p>
     </div>
   </section>
@@ -542,11 +542,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container">
       <h2 id="related-heading" class="section-title">More Storage Solutions</h2>
       <div class="related-grid">
-        <a href="index.html" class="related-card">
+        <a href="/" class="related-card">
           <h3>📦 Rent a Storage Unit</h3>
           <p>Rather rent than buy? Mouse-proof 20ft and 40ft containers from $130/month with 24/7 access. First 2 months FREE with 6-month contract.</p>
         </a>
-        <a href="parking.html" class="related-card">
+        <a href="/parking" class="related-card">
           <h3>🚐 RV &amp; Boat Parking</h3>
           <p>Secure outdoor parking for RVs, boats, campers, and vehicles in Vernal. $100/month flat rate with 24/7 access.</p>
         </a>
