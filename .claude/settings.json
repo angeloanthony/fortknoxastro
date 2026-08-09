@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git ls-remote *)",
+      "Bash(curl -s -o /dev/null -w \"  /nonexistent-check-2 -> %{http_code}\\\\n\" --max-time 12 \"https://vernalfortknoxselfstorage.com/nonexistent-check-2\")",
+      "Bash(curl -s --max-time 15 \"https://www.vernalfortknoxselfstorage.com/about\")",
+      "Bash(curl -s -o /dev/null -w \"  www/about.html -> %{http_code} \" --max-time 12 -I \"https://www.vernalfortknoxselfstorage.com/about.html\")",
+      "Bash(curl -sI --max-time 12 \"https://www.vernalfortknoxselfstorage.com/about.html\")",
+      "Bash(curl -s -o /dev/null -w \"  www/nonexistent-check-2 -> %{http_code}\\\\n\" --max-time 12 \"https://www.vernalfortknoxselfstorage.com/nonexistent-check-2\")",
+      "Bash(curl -s --max-time 15 \"https://www.vernalfortknoxselfstorage.com/sitemap.xml\")",
+      "Bash(curl -s -o /dev/null -w \"  https://www.../  -> %{http_code}  location=%{redirect_url}\\\\n\" --max-time 15 -I \"https://www.vernalfortknoxselfstorage.com/\")",
+      "Bash(curl -s -o /dev/null -w \"  https://apex/      -> %{http_code}\\\\n\" --max-time 15 -I \"https://vernalfortknoxselfstorage.com/\")",
+      "Bash(node --input-type=module -e ' *)"
+    ]
+  }
+}
