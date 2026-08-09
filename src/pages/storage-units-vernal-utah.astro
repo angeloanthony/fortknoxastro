@@ -123,7 +123,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <div class="container" style="max-width: 900px;">
       <h1 class="hero-title" style="font-size: 2.4rem;">Storage Units in Vernal, Utah — Mouse-Proof, Secure, Affordable</h1>
 
-      <div class="seo-only" aria-hidden="true">
         <div class="page-summary-wrap" role="note" aria-label="Business summary">
           <p class="page-summary">
             <strong>Storage units in Vernal, Utah</strong> from Fort Knox Self Storage. Mouse-proof steel containers from <strong>$130/month</strong>. 24/7 access, no hidden fees, fireproof construction. 20ft and 40ft units plus vehicle parking. First 2 months FREE with 6-month contract. Located at <strong>2225 South 3250 East, Vernal, UT 84078</strong>. Call <a href="tel:4358287710">James Richards at 435-828-7710</a>.
@@ -133,7 +132,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         <div class="voice-answer-block">
           <p><strong>Looking for storage units in Vernal, Utah?</strong> Fort Knox Self Storage has mouse-proof steel containers starting at $130 per month with 24/7 access and no hidden fees. Call James at 435-828-7710 to reserve your unit today.</p>
         </div>
-      </div>
 
       <div style="max-width: 800px; margin: 0 auto; font-family: 'Open Sans', sans-serif; font-size: 1.05rem; line-height: 1.8;">
 
@@ -290,6 +288,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </div>
     </div>
     <div class="hero-overlay"></div>
+  </section>
+
+  <!-- ═══ FAQ — visible counterpart of the FAQPage JSON-LD in <head> ═══ -->
+  <section class="faq-section-local" aria-labelledby="faq-heading">
+    <div class="container" style="max-width: 900px;">
+      <h2 id="faq-heading" class="section-title" style="color: var(--primary-dark);">Storage Units in Vernal — Frequently Asked Questions</h2>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+          What sizes of storage units are available in Vernal?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Fort Knox Self Storage offers 20-foot containers ($130/month) and 40-foot containers ($230/month). A 20ft unit holds a full apartment. A 40ft unit holds a full home and garage. Vehicle parking is $100/month.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+          Are storage units in Vernal mouse-proof?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Fort Knox Self Storage is the only facility in Vernal that uses all-steel shipping containers — fully sealed with no wood framing or gaps. Every unit is mouse-proof, spider-proof, dust-proof, and fireproof.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('open');">
+          What is the cheapest storage unit in Vernal, Utah?
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p>Fort Knox Self Storage offers 20-foot mouse-proof steel containers starting at $130/month with no hidden fees. With the 6-month contract deal (first 2 months free), the effective rate drops to approximately $87/month.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ═══ LOCATION / MAP ═══ -->
