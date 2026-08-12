@@ -40,28 +40,61 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         "priceRange": "$130–$230/month",
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
-          "name": "Storage Unit Options",
+          "@id": "https://vernalfortknoxselfstorage.com/storage-units-vernal-utah#unit-catalog",
+          "name": "Fort Knox Self Storage — Storage Unit Catalog",
+          "url": "https://vernalfortknoxselfstorage.com/storage-units-vernal-utah",
+          "numberOfItems": 3,
           "itemListElement": [
             {
               "@type": "Offer",
               "name": "20ft Mouse-Proof Storage Container",
+              "url": "https://vernalfortknoxselfstorage.com/20ft-storage-container-rental",
               "price": "130",
               "priceCurrency": "USD",
-              "description": "20-foot steel storage container, mouse-proof. Holds contents of a typical apartment. 24/7 access."
+              "availability": "https://schema.org/InStock",
+              "businessFunction": "https://schema.org/LeaseOut",
+              "description": "20 ft long × 8 ft wide × 8.5 ft tall all-steel container — approximately 160 square feet of floor space and 1,170 cubic feet of volume. Holds a 1–2 bedroom apartment. Mouse-proof, fireproof, drive-up, 24/7 gate-code access.",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "20ft Steel Storage Container",
+                "description": "All-steel corten shipping container used as a storage unit. Fully sealed against mice, insects, and dust. Double doors 7.7 ft wide × 7.5 ft tall.",
+                "width": { "@type": "QuantitativeValue", "value": 8, "unitCode": "FOT" },
+                "depth": { "@type": "QuantitativeValue", "value": 20, "unitCode": "FOT" },
+                "height": { "@type": "QuantitativeValue", "value": 8.5, "unitCode": "FOT" }
+              }
             },
             {
               "@type": "Offer",
               "name": "40ft Mouse-Proof Storage Container",
+              "url": "https://vernalfortknoxselfstorage.com/40ft-storage-container-rental",
               "price": "230",
               "priceCurrency": "USD",
-              "description": "40-foot steel storage container, mouse-proof. Holds contents of a full home and garage. 24/7 access."
+              "availability": "https://schema.org/InStock",
+              "businessFunction": "https://schema.org/LeaseOut",
+              "description": "40 ft long × 8 ft wide × 8.5 ft tall all-steel container — approximately 320 square feet of floor space and 2,390 cubic feet of volume. Holds a 3–4 bedroom home plus garage. High Cube variant is 9.5 ft tall. Mouse-proof, fireproof, drive-up, 24/7 gate-code access.",
+              "itemOffered": {
+                "@type": "Product",
+                "name": "40ft Steel Storage Container",
+                "description": "All-steel corten shipping container used as a storage unit. Available in 8.5 ft standard and 9.5 ft High Cube height. Double doors 7.7 ft wide × 7.5 ft tall.",
+                "width": { "@type": "QuantitativeValue", "value": 8, "unitCode": "FOT" },
+                "depth": { "@type": "QuantitativeValue", "value": 40, "unitCode": "FOT" },
+                "height": { "@type": "QuantitativeValue", "value": 8.5, "unitCode": "FOT" }
+              }
             },
             {
               "@type": "Offer",
-              "name": "Vehicle / RV / Boat Parking",
+              "name": "Vehicle / RV / Boat Parking Space",
+              "url": "https://vernalfortknoxselfstorage.com/rv-boat-parking",
               "price": "100",
               "priceCurrency": "USD",
-              "description": "Outdoor parking for RVs, boats, campers, and vehicles. 24/7 access."
+              "availability": "https://schema.org/InStock",
+              "businessFunction": "https://schema.org/LeaseOut",
+              "description": "Outdoor gated parking space for RVs, boats, campers, trailers, and vehicles. Flat $100/month, no deposit, wide driveways for trailers, 24/7 gate-code access.",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Outdoor RV, Boat & Vehicle Parking",
+                "description": "Gated outdoor parking in Vernal, Utah for RVs of all classes, boats on trailers, campers, fifth wheels, toy haulers, trucks, and SUVs."
+              }
             }
           ]
         },
@@ -143,58 +176,149 @@ import BaseLayout from "../layouts/BaseLayout.astro";
           Whether you're storing household furniture during a <a href="/renovation-storage" style="color: var(--primary-dark); font-weight: 600;">home renovation</a>, protecting <a href="/hunting-season-storage" style="color: var(--primary-dark); font-weight: 600;">hunting gear between seasons</a>, securing <a href="/construction-equipment-storage" style="color: var(--primary-dark); font-weight: 600;">contractor tools and materials</a>, or parking an RV — Fort Knox has the space, the security, and the price point.
         </p>
 
-        <!-- ═══ PRICING TABLE ═══ -->
-        <h2 style="font-family: 'Georgia', serif; font-size: 1.8rem; color: var(--primary-dark); margin: 40px 0 20px;">Storage Unit Prices in Vernal</h2>
+        <!-- ═══ UNIT CATALOG ═══ -->
+        <h2 style="font-family: 'Georgia', serif; font-size: 1.8rem; color: var(--primary-dark); margin: 40px 0 12px;">The Fort Knox Unit Catalog — Every Unit We Rent</h2>
+
+        <p style="margin-bottom: 24px;">Fort Knox rents three things: a 20ft container, a 40ft container, and an outdoor parking space. That's the whole catalog. Below is exactly what each one measures, what actually fits inside it, and what it costs — so you can pick the unit before you call.</p>
+
+        <!-- 20FT -->
+        <div style="border: 3px solid var(--primary-dark); border-radius: 8px; padding: 24px 22px; margin-bottom: 22px; background: white; box-shadow: var(--shadow-sm);">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-dark); margin: 0 0 4px;">20ft Steel Container — $130/month</h3>
+          <p style="font-family: 'Open Sans', sans-serif; font-size: 0.92rem; color: #555; margin: 0 0 16px;">The small unit. Roughly a one-car garage worth of sealed steel space.</p>
+
+          <div style="overflow-x: auto; margin-bottom: 16px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+              <tbody>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600; width: 46%;">Dimensions</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">20 ft long × 8 ft wide × 8.5 ft tall</td></tr>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600;">Floor space</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">~160 sq ft</td></tr>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600;">Total volume</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">~1,170 cubic ft</td></tr>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600;">Door opening</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">7.7 ft wide × 7.5 ft tall (double doors)</td></tr>
+                <tr><td style="padding: 9px 12px; font-weight: 600;">Access</td><td style="padding: 9px 12px;">Drive-up, personal gate code, 24/7</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="margin-bottom: 10px;"><strong>What fits:</strong> the contents of a 1–2 bedroom apartment — queen bed, dresser, couch, dining table and chairs, washer/dryer, and 20–30 medium boxes. Also good for tools, ATVs, motorcycles, and small workshop equipment.</p>
+          <p style="margin-bottom: 16px;"><strong>Rent this one if:</strong> you're between homes, downsizing, storing seasonal or hunting gear, or you're a trade needing a lockable tool and materials box you can back a truck up to.</p>
+
+          <a href="/20ft-storage-container-rental" style="display: inline-block; background: var(--primary-dark); color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; padding: 12px 22px; border-radius: 6px;">See full 20ft specs &amp; rent →</a>
+        </div>
+
+        <!-- 40FT -->
+        <div style="border: 3px solid var(--primary-dark); border-radius: 8px; padding: 24px 22px; margin-bottom: 22px; background: white; box-shadow: var(--shadow-sm);">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-dark); margin: 0 0 4px;">40ft Steel Container — $230/month</h3>
+          <p style="font-family: 'Open Sans', sans-serif; font-size: 0.92rem; color: #555; margin: 0 0 16px;">The big unit, and the one most people end up renting. Double the floor space for $100 more.</p>
+
+          <div style="overflow-x: auto; margin-bottom: 16px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+              <tbody>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600; width: 46%;">Dimensions</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">40 ft long × 8 ft wide × 8.5 ft tall</td></tr>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600;">High Cube option</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">9.5 ft tall — one extra foot of clearance</td></tr>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600;">Floor space</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">~320 sq ft</td></tr>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600;">Total volume</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">~2,390 cubic ft (standard height)</td></tr>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600;">Door opening</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">7.7 ft wide × 7.5 ft tall (double doors)</td></tr>
+                <tr><td style="padding: 9px 12px; font-weight: 600;">Access</td><td style="padding: 9px 12px;">Drive-up, personal gate code, 24/7</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="margin-bottom: 10px;"><strong>What fits:</strong> an entire 3–4 bedroom home plus a full garage — all furniture, appliances, boxes, ATVs or motorcycles, oilfield equipment, ranch and farm supplies, and large contractor gear.</p>
+          <p style="margin-bottom: 16px;"><strong>Rent this one if:</strong> you're storing a whole household, running business inventory out of a <a href="/business-storage" style="color: var(--primary-dark); font-weight: 600;">mini warehouse</a>, or you need shelving and tall items standing upright — that's what the High Cube is for.</p>
+
+          <a href="/40ft-storage-container-rental" style="display: inline-block; background: var(--primary-dark); color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; padding: 12px 22px; border-radius: 6px;">See full 40ft specs &amp; rent →</a>
+        </div>
+
+        <!-- PARKING -->
+        <div style="border: 3px solid var(--primary-dark); border-radius: 8px; padding: 24px 22px; margin-bottom: 26px; background: white; box-shadow: var(--shadow-sm);">
+          <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; color: var(--primary-dark); margin: 0 0 4px;">Outdoor Vehicle Parking — $100/month</h3>
+          <p style="font-family: 'Open Sans', sans-serif; font-size: 0.92rem; color: #555; margin: 0 0 16px;">A gated space in the lot rather than a container. Flat rate, no deposit.</p>
+
+          <div style="overflow-x: auto; margin-bottom: 16px;">
+            <table style="width: 100%; border-collapse: collapse; font-size: 0.95rem;">
+              <tbody>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600; width: 46%;">Space type</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">Open outdoor lot, gated perimeter</td></tr>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600;">Maneuvering</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">Wide driveways sized for trailers and flatbeds</td></tr>
+                <tr><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5; font-weight: 600;">Move-in cost</td><td style="padding: 9px 12px; border-bottom: 1px solid #e5e5e5;">First month only — no deposit, no admin fee</td></tr>
+                <tr><td style="padding: 9px 12px; font-weight: 600;">Access</td><td style="padding: 9px 12px;">Personal gate code, 24/7</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p style="margin-bottom: 10px;"><strong>What fits:</strong> RVs of all classes, motorhomes, boats on trailers, campers, fifth wheels, travel trailers, toy haulers, ATVs on trailers, trucks and SUVs.</p>
+          <p style="margin-bottom: 16px;"><strong>Rent this one if:</strong> the thing you're storing has wheels and doesn't need to be under a roof. Call to confirm your vehicle's dimensions against current space availability.</p>
+
+          <a href="/rv-boat-parking" style="display: inline-block; background: var(--primary-dark); color: var(--white); font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; text-decoration: none; padding: 12px 22px; border-radius: 6px;">See parking details →</a>
+        </div>
+
+        <!-- SIDE-BY-SIDE -->
+        <h3 style="font-family: 'Montserrat', sans-serif; font-size: 1.15rem; color: var(--primary-dark); margin: 0 0 14px;">All three units, side by side</h3>
 
         <div style="overflow-x: auto; margin-bottom: 30px;">
-          <table style="width: 100%; max-width: 700px; margin: 0 auto; border-collapse: collapse; background: white; box-shadow: var(--shadow-md);">
+          <table style="width: 100%; min-width: 560px; border-collapse: collapse; background: white; box-shadow: var(--shadow-md);">
             <thead>
               <tr style="background: var(--primary-dark); color: white;">
                 <th style="padding: 15px; text-align: left; border: 2px solid var(--primary-dark);">Unit</th>
-                <th style="padding: 15px; text-align: center; border: 2px solid var(--primary-dark);">Size</th>
+                <th style="padding: 15px; text-align: center; border: 2px solid var(--primary-dark);">Dimensions</th>
+                <th style="padding: 15px; text-align: center; border: 2px solid var(--primary-dark);">Floor Space</th>
                 <th style="padding: 15px; text-align: center; border: 2px solid var(--primary-dark);">Price</th>
                 <th style="padding: 15px; text-align: center; border: 2px solid var(--primary-dark);">Best For</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td style="padding: 15px; border: 1px solid #ddd; font-weight: 600;">20ft Steel Container</td>
-                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">160 sq ft</td>
+                <td style="padding: 15px; border: 1px solid #ddd; font-weight: 600;"><a href="/20ft-storage-container-rental" style="color: var(--primary-dark);">20ft Steel Container</a></td>
+                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">20 × 8 × 8.5 ft</td>
+                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">~160 sq ft</td>
                 <td style="padding: 15px; border: 1px solid #ddd; text-align: center; color: green; font-weight: 700;">$130/mo</td>
-                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">Apartments, seasonal gear</td>
+                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">1–2 bedroom apartment, tools, seasonal gear</td>
               </tr>
               <tr style="background: #f9f9f9;">
-                <td style="padding: 15px; border: 1px solid #ddd; font-weight: 600;">40ft Steel Container</td>
-                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">320 sq ft</td>
+                <td style="padding: 15px; border: 1px solid #ddd; font-weight: 600;"><a href="/40ft-storage-container-rental" style="color: var(--primary-dark);">40ft Steel Container</a></td>
+                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">40 × 8 × 8.5 ft<br><span style="font-size: 0.85rem; color: #666;">(9.5 ft High Cube)</span></td>
+                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">~320 sq ft</td>
                 <td style="padding: 15px; border: 1px solid #ddd; text-align: center; color: green; font-weight: 700;">$230/mo</td>
-                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">Full homes, businesses</td>
+                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">3–4 bedroom home + garage, business inventory</td>
               </tr>
               <tr>
-                <td style="padding: 15px; border: 1px solid #ddd; font-weight: 600;">Vehicle / RV Parking</td>
+                <td style="padding: 15px; border: 1px solid #ddd; font-weight: 600;"><a href="/rv-boat-parking" style="color: var(--primary-dark);">Vehicle / RV Parking</a></td>
                 <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">Open lot</td>
+                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">—</td>
                 <td style="padding: 15px; border: 1px solid #ddd; text-align: center; color: green; font-weight: 700;">$100/mo</td>
-                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">RVs, boats, trailers</td>
+                <td style="padding: 15px; border: 1px solid #ddd; text-align: center;">RVs, boats, campers, trailers</td>
               </tr>
             </tbody>
           </table>
         </div>
 
-        <p style="margin-bottom: 20px; text-align: center; font-weight: 700; color: var(--primary-dark);">
-          🎁 First 2 months FREE with a 6-month contract — <a href="/cheap-storage-vernal-utah" style="color: var(--accent-color);">see full pricing details</a>
-        </p>
+        <!-- ═══ WHICH UNIT? ═══ -->
+        <h2 style="font-family: 'Georgia', serif; font-size: 1.8rem; color: var(--primary-dark); margin: 40px 0 16px;">Which Unit Should I Rent?</h2>
 
-        <!-- ═══ WHY FORT KNOX ═══ -->
-        <h2 style="font-family: 'Georgia', serif; font-size: 1.8rem; color: var(--primary-dark); margin: 40px 0 20px;">Why Vernal Chooses Fort Knox</h2>
+        <p style="margin-bottom: 18px;">Find the line that sounds like you:</p>
 
-        <p style="margin-bottom: 14px;"><strong>🐭 <a href="/mouse-proof-storage-vernal" style="color: var(--primary-dark);">Mouse-proof construction</a>.</strong> Every unit is an all-steel shipping container — fully sealed with no wood framing, no gaps, and zero rodent entry points. This is the single biggest difference between Fort Knox and every other storage facility in the Basin. Your belongings stay untouched whether you store them for a month or a year.</p>
+        <ul style="margin: 0 0 20px; padding-left: 22px;">
+          <li style="margin-bottom: 12px;"><strong>A 1–2 bedroom apartment, or you're between homes.</strong> Take the <a href="/20ft-storage-container-rental" style="color: var(--primary-dark); font-weight: 600;">20ft at $130/mo</a>. ~160 sq ft is enough for the furniture, appliances, and boxes without paying for space you won't fill.</li>
+          <li style="margin-bottom: 12px;"><strong>A 3–4 bedroom house, or a house plus a garage.</strong> Take the <a href="/40ft-storage-container-rental" style="color: var(--primary-dark); font-weight: 600;">40ft at $230/mo</a>. Splitting a household across two 20ft units costs more and makes everything harder to reach.</li>
+          <li style="margin-bottom: 12px;"><strong>Tall items, shelving, or you want to work inside the unit.</strong> Ask for the <a href="/40ft-storage-container-rental" style="color: var(--primary-dark); font-weight: 600;">40ft High Cube</a> — 9.5 ft of clearance instead of 8.5 ft.</li>
+          <li style="margin-bottom: 12px;"><strong>Tools, materials, and a truck that needs to pull up to the door.</strong> Either container works; the 20ft is usually enough for a <a href="/construction-equipment-storage" style="color: var(--primary-dark); font-weight: 600;">crew's tools and materials</a>, the 40ft if you're storing equipment or scaffolding. Both are drive-up with wide driveways for flatbeds and trailers.</li>
+          <li style="margin-bottom: 12px;"><strong>It has wheels.</strong> <a href="/rv-boat-parking" style="color: var(--primary-dark); font-weight: 600;">Outdoor parking at $100/mo</a> — RV, boat, camper, trailer.</li>
+          <li style="margin-bottom: 12px;"><strong>Still not sure.</strong> Work through the <a href="/storage-unit-sizes-guide" style="color: var(--primary-dark); font-weight: 600;">storage unit size guide</a>, or just call James at <a href="tel:4358287710" style="color: var(--primary-dark); font-weight: 600;">435-828-7710</a> and describe what you're storing — he'll tell you which unit it fits in.</li>
+        </ul>
 
-        <p style="margin-bottom: 14px;"><strong>🔥 <a href="/fireproof-storage-vernal" style="color: var(--primary-dark);">Fireproof steel</a>.</strong> 14-gauge Corten steel walls, floor, and ceiling. No combustible materials. 24/7 fire detection alerts. Most Vernal facilities use wood framing — one fire and everything inside is gone.</p>
+        <p style="margin-bottom: 20px;">Want the money side first? The <a href="/storage-cost-vernal-utah" style="color: var(--primary-dark); font-weight: 600;">full storage cost breakdown for Vernal</a> covers what each unit runs per month, what the 6-month deal changes, and what isn't charged. <strong>First 2 months FREE with a 6-month contract</strong> — that puts a 20ft at roughly <a href="/cheap-storage-vernal-utah" style="color: var(--primary-dark); font-weight: 600;">$87/month effective</a>.</p>
 
-        <p style="margin-bottom: 14px;"><strong>🕐 <a href="/24-hour-storage-vernal" style="color: var(--primary-dark);">True 24/7 access</a>.</strong> Personal access code, gated entry, 365 days a year. No restricted hours, no holiday blackouts. Critical for oil field workers, hunters, and contractors who don't work 9-to-5.</p>
+        <!-- ═══ WHAT EVERY UNIT INCLUDES ═══ -->
+        <h2 style="font-family: 'Georgia', serif; font-size: 1.8rem; color: var(--primary-dark); margin: 40px 0 16px;">What Every Unit Includes</h2>
 
-        <p style="margin-bottom: 14px;"><strong>💰 <a href="/no-hidden-fees-storage" style="color: var(--primary-dark);">No hidden fees</a>.</strong> No admin fee, no deposit, no mandatory insurance, no lock purchase requirement, no rate increases after 90 days. The price James quotes you is the price you pay.</p>
+        <p style="margin-bottom: 14px;">Whichever unit you pick, these come with it:</p>
 
-        <p style="margin-bottom: 14px;"><strong>📞 Direct owner contact.</strong> James Richards owns and manages the facility personally. When you call <a href="tel:4358287710">435-828-7710</a>, you reach the owner — not a corporate call center. Available 24/7.</p>
+        <ul style="margin: 0 0 20px; padding-left: 22px;">
+          <li style="margin-bottom: 10px;"><strong>🐭 <a href="/mouse-proof-storage-vernal" style="color: var(--primary-dark);">Mouse-proof steel</a></strong> — sealed containers, no wood framing, no rodent entry points.</li>
+          <li style="margin-bottom: 10px;"><strong>🔥 <a href="/fireproof-storage-vernal" style="color: var(--primary-dark);">Fireproof construction</a></strong> — 14-gauge Corten steel walls, floor, and ceiling, plus 24/7 fire detection.</li>
+          <li style="margin-bottom: 10px;"><strong>🕐 <a href="/24-hour-storage-vernal" style="color: var(--primary-dark);">True 24/7 access</a></strong> — personal gate code, 365 days a year, no restricted hours. Built for oil field shifts, hunters, and contractors who don't work 9-to-5.</li>
+          <li style="margin-bottom: 10px;"><strong>🚚 Drive-up access and wide driveways</strong> — pull right to the door, with room for flatbeds, semis, and trailers to maneuver.</li>
+          <li style="margin-bottom: 10px;"><strong>💰 <a href="/no-hidden-fees-storage" style="color: var(--primary-dark);">No hidden fees</a></strong> — no admin fee, no deposit, no mandatory insurance, no rate increases.</li>
+          <li style="margin-bottom: 10px;"><strong>📞 Direct owner contact</strong> — <a href="tel:4358287710" style="color: var(--primary-dark);">435-828-7710</a> reaches James Richards, the owner, not a call center.</li>
+        </ul>
 
         <!-- ═══ USE CASES ═══ -->
         <h2 style="font-family: 'Georgia', serif; font-size: 1.8rem; color: var(--primary-dark); margin: 40px 0 20px;">What Can You Store?</h2>
@@ -233,12 +357,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         </div>
 
-        <!-- ═══ COMPARISON ═══ -->
-        <h2 style="font-family: 'Georgia', serif; font-size: 1.8rem; color: var(--primary-dark); margin: 40px 0 20px;">Fort Knox vs. Other Vernal Storage Facilities</h2>
-
-        <p style="margin-bottom: 14px;">Want to see how Fort Knox stacks up against every other storage option in the area? We built a <a href="/best-storage-vernal-utah" style="color: var(--primary-dark); font-weight: 700;">full comparison of the best storage units in Vernal</a> — including pricing, features, and honest pros and cons for each facility.</p>
-
-        <p style="margin-bottom: 14px;">The short version: Fort Knox is the only facility with mouse-proof steel construction, the only one with true 24/7 access and no restricted hours, and the only one with a 2-months-free deal. Read the <a href="/storage-vernal-comparison" style="color: var(--primary-dark); font-weight: 600;">detailed comparison</a> to decide for yourself.</p>
+        <p style="margin-bottom: 14px;">Comparing facilities rather than units? See the <a href="/best-storage-vernal-utah" style="color: var(--primary-dark); font-weight: 600;">best storage units in Vernal</a> and the <a href="/storage-vernal-comparison" style="color: var(--primary-dark); font-weight: 600;">detailed facility comparison</a>.</p>
 
         <!-- ═══ SERVICE AREA ═══ -->
         <h2 style="font-family: 'Georgia', serif; font-size: 1.8rem; color: var(--primary-dark); margin: 40px 0 20px;">Serving the Entire Uintah Basin</h2>
