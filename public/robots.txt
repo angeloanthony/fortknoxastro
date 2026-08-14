@@ -1,8 +1,10 @@
 User-agent: *
 Allow: /
-
-# Fix: Points directly to your actual domain
-Sitemap: https://vernalfortknoxselfstorage.com/sitemap.xml
+# Disallow system and metadata files
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /.git/
+Disallow: /.gitattributes
 
 # Allow all major search engines
 User-agent: Googlebot
@@ -14,10 +16,4 @@ Allow: /
 User-agent: Bingbot
 Allow: /
 
-# Disallow system and metadata files
-User-agent: *
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /.git/
-Disallow: /.gitattributes
-Disallow: /llms.txt
+Sitemap: https://vernalfortknoxselfstorage.com/sitemap.xml
